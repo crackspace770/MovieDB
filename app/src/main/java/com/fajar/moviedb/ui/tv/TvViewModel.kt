@@ -1,8 +1,6 @@
 package com.fajar.moviedb.ui.tv
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.asLiveData
+import androidx.lifecycle.*
 import com.fajar.moviedb.core.data.Resource
 import com.fajar.moviedb.core.domain.model.Movie
 import com.fajar.moviedb.core.domain.usecase.MovieUseCase
@@ -12,8 +10,22 @@ import javax.inject.Inject
 @HiltViewModel
 class TvViewModel @Inject constructor(private val movieUseCase: MovieUseCase) : ViewModel() {
 
+    private val selectedMovie = MutableLiveData<Movie>()
 
-    fun getPopularTvList(sort: String): LiveData<Resource<List<Movie>>> {
-        return movieUseCase.getTrendingTv(sort).asLiveData()
+    fun setSelectedTv(movie: Movie) {
+        this.selectedMovie.value = movie
     }
+
+
+    var tvDetail: LiveData<Resource<Movie>> =
+        Transformations.switchMap(selectedMovie) { movie ->
+            movieUseCase.getTvDetail(movie).asLiveData()
+        }
+
+    fun getPopularTvList(): LiveData<Resource<List<Movie>>> {
+        return movieUseCase.getPopularTv().asLiveData()
+    }
+
+    val popularTv = movieUseCase.getPopularTv().asLiveData()
+
 }

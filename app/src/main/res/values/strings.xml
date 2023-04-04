@@ -3,10 +3,13 @@
     <string name="title_home">Popular Movie</string>
     <string name="title_search">Search</string>
     <string name="title_favorite">Favorites</string>
-    <string name="title_tv">TV Series</string>
+    <string name="title_tv">Popular TV Series</string>
     <string name="image_description">Image</string>
     <string name="text_primary">Sample of title text</string>
     <string name="text_subtitle">Sample of subtitle text</string>
+
+    <string name="movie">Movie</string>
+    <string name="tv_show">TV Show</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -57,4 +60,21 @@
     <string name="try_again">Try Again</string>
 
     <string name="star_symbol">star symbol</string>
+    <string name="title_setting">Module Title</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string name="action_filter">filter</string>
+
+    <string name="search_empty_result_illustration">Search Empty Result Illustration</string>
+    <string name="movie_are_you_looking">What movie are you looking for?</string>
+    <string name="search_your_favorite_movie">You can search your favorite movies or find similar results.</string>
+
+    <string name="nothing_add">You Haven\'t add anything yet</string>
+    <string name="tap_love">Tap on love action button to add your favorite movie</string>
+
+    <string name="appbar_scrolling_view_behavior" translatable="false">com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior</string>
+    <string name="poster">poster</string>
+
+
 </resources>

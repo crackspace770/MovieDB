@@ -15,6 +15,15 @@
             app:destination="@id/detailActivity" />
     </fragment>
 
+    <fragment
+        android:id="@+id/navigation_tv"
+        android:name="com.fajar.moviedb.ui.tv.TvFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_tv" >
+        <action
+            android:id="@+id/action_navigation_home_to_detailActivity"
+            app:destination="@id/detailActivity" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_search"

@@ -10,9 +10,12 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.fajar.moviedb.core.data.Resource
 import com.fajar.moviedb.core.ui.MovieAdapter
+import com.fajar.moviedb.core.ui.TvAdapter
+import com.fajar.moviedb.core.utils.SortUtils
 import com.fajar.moviedb.databinding.FragmentMainBinding
 import com.fajar.moviedb.ui.detail.DetailActivity
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.android.synthetic.main.fragment_home.*
 
 @AndroidEntryPoint
 class MainFragment: Fragment() {
@@ -20,8 +23,8 @@ class MainFragment: Fragment() {
     private val viewModel: MainViewModel by viewModels()
     private var _binding: FragmentMainBinding? = null
     private val binding get() = _binding!!
-    private val movieAdapter = MovieAdapter()
-    private val tvAdapter = MovieAdapter()
+    private val movieAdapter = TvAdapter()
+    private val tvAdapter = TvAdapter()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,7 +38,7 @@ class MainFragment: Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         if(activity != null){
-            val movieAdapter = MovieAdapter()
+            val movieAdapter = TvAdapter()
 
             movieAdapter.onItemClick = { selectedData ->
                 val intent = Intent(activity, DetailActivity::class.java)
@@ -60,21 +63,18 @@ class MainFragment: Fragment() {
                 rvTv.apply {
                     layoutManager =
                         LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-                    adapter = tvAdapter
+                    adapter = movieAdapter
                 }
 
-            //    findUpcomingMovies()
-            //    findTopTvShows()
+                findUpcomingMovies()
+                findTopTvShows()
 
-               // btnTryAgain.setOnClickListener {
-              //      findUpcomingMovies()
+
+
+               // swipeToRefresh.setOnRefreshListener {
+               //     findUpcomingMovies()
               //      findTopTvShows()
-              //  }
-
-              //  swipeToRefresh.setOnRefreshListener {
-             //       findUpcomingMovies()
-             //       findTopTvShows()
-             //       swipeToRefresh.isRefreshing = false
+              //      swipeToRefresh.isRefreshing = false
              //   }
 
             }
@@ -84,61 +84,61 @@ class MainFragment: Fragment() {
 
     }
 
-  //  private fun findUpcomingMovies() {
-   //     binding.apply {
-           // loadingUpcomingMovie.visibility = View.VISIBLE
+   private fun findUpcomingMovies() {
+        binding.apply {
+         //   progressBar.visibility = View.VISIBLE
             //onFailMsg.visibility = View.GONE
-    //        viewModel.getPopularMoviesList()
-    //            .observe(viewLifecycleOwner) { movieList ->
-    //                if (movieList != null) {
-    //                    when (movieList) {
-    //                        is Resource.Loading -> {
-                         //       loadingUpcomingMovie.visibility = View.VISIBLE
-    //                        }
-    //                        is Resource.Success -> {
+            viewModel.popularMovie
+                .observe(viewLifecycleOwner) { movieList ->
+                    if (movieList != null) {
+                        when (movieList) {
+                            is Resource.Loading -> {
+       //                         progress_bar.visibility = View.VISIBLE
+                            }
+                            is Resource.Success -> {
                          //       loadingUpcomingMovie.visibility = View.GONE
-     //                           val sortedList =
-     //                               movieList.data?.sortedByDescending { it.releaseDate }
-     //                           sortedList?.let { movieAdapter.setData(it) }
-      //                      }
-     //                       is Resource.Error -> {
-                         //       loadingUpcomingMovie.visibility = View.GONE
-                              //  onFailMsg.visibility = View.VISIBLE
-       //                     }
-      //                  }
-      //              }
-     //           }
-     //   }
-   // }
+                                val sortedList =
+                                   movieList.data?.sortedByDescending { it.releaseDate }
+                                sortedList?.let { movieAdapter.setData(it) }
+                           }
+                            is Resource.Error -> {
+  //                              progress_bar.visibility = View.GONE
+                                //onFailMsg.visibility = View.VISIBLE
+                            }
+                        }
+                    }
+                }
+        }
+    }
 
-  //  private fun findTopTvShows() {
-  //      binding.apply {
-         //   loadingTopRatedTvShow.visibility = View.VISIBLE
-          //  btnTryAgain.visibility = View.GONE
-          //  onFailMsg.visibility = View.GONE
-     //       viewModel.getPopularTvList()
-    //            .observe(viewLifecycleOwner) { tvShowList ->
-    //                    when (tvShowList) {
-    //                        is Resource.Loading -> {
-                       //         loadingTopRatedTvShow.visibility = View.VISIBLE
-     //                       }
-     //                       is Resource.Success -> {
-                      //          loadingTopRatedTvShow.visibility = View.GONE
-       //                         val sortedList =
-      //                              tvShowList.data?.sortedByDescending { it.voteAverage }
-      //                          sortedList?.let { tvAdapter.setData(it) }
-      //                      }
-      //                      is Resource.Error -> {
-                       //         loadingTopRatedTvShow.visibility = View.GONE
-                            //    btnTryAgain.visibility = View.VISIBLE
-                            //    onFailMsg.visibility = View.VISIBLE
-   //                         }
-    //                    }
-    //                }
-    //            }
-    //    }
-   // }
+    private fun findTopTvShows() {
+        binding.apply {
+        //    progressBar.visibility = View.VISIBLE
+            //btnTryAgain.visibility = View.GONE
+           // onFailMsg.visibility = View.GONE
+            viewModel.popularTv
+                .observe(viewLifecycleOwner) { tvShowList ->
+                        when (tvShowList) {
+                            is Resource.Loading -> {
+ //                               progress_bar.visibility = View.VISIBLE
+                            }
+                            is Resource.Success -> {
+ //                              progress_bar.visibility = View.GONE
+                               val sortedList =
+                                    tvShowList.data?.sortedByDescending { it.voteAverage }
+                                sortedList?.let { tvAdapter.setData(it) }
+                            }
+                            is Resource.Error -> {
+  //                              progress_bar.visibility = View.GONE
+                               // btnTryAgain.visibility = View.VISIBLE
+                               // onFailMsg.visibility = View.VISIBLE
+                           }
+                       }
+                    }
+               }
+        }
+
+    }
 
 
 
-}

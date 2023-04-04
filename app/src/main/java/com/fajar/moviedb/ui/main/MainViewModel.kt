@@ -12,6 +12,16 @@ import javax.inject.Inject
 @HiltViewModel
 class MainViewModel @Inject constructor(private val movieUseCase: MovieUseCase): ViewModel() {
 
+    fun getPopularTvList(sort: String): LiveData<Resource<List<Movie>>> {
+        return movieUseCase.getTrendingTv(sort).asLiveData()
+    }
 
+    fun getPopularMoviesList(sort: String): LiveData<Resource<List<Movie>>> {
+        return movieUseCase.getTrendingMovie(sort).asLiveData()
+    }
+
+    val popularTv = movieUseCase.getPopularTv().asLiveData()
+
+    val popularMovie= movieUseCase.getPopularMovie().asLiveData()
 
 }

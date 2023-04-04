@@ -1,19 +1,34 @@
 package com.fajar.moviedb.ui.home
 
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.asLiveData
+import androidx.lifecycle.*
 import com.fajar.moviedb.core.data.Resource
 import com.fajar.moviedb.core.domain.model.Movie
 import com.fajar.moviedb.core.domain.usecase.MovieUseCase
+import com.fajar.moviedb.core.utils.SortUtils
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(private val movieUseCase: MovieUseCase) : ViewModel() {
 
-    fun getPopularMoviesList(sort: String): LiveData<Resource<List<Movie>>> {
-        return movieUseCase.getTrendingMovie(sort).asLiveData()
+    private val selectedMovie = MutableLiveData<Movie>()
+
+    fun setSelectedMovie(movie: Movie) {
+        this.selectedMovie.value = movie
     }
+
+    var movieDetail: LiveData<Resource<Movie>> =
+        Transformations.switchMap(selectedMovie) { movie ->
+            movieUseCase.getMovieDetail(movie).asLiveData()
+        }
+
+    fun getPopularMoviesList(): LiveData<Resource<List<Movie>>> {
+        return movieUseCase.getPopularMovie().asLiveData()
+    }
+
+    val popularMovie= movieUseCase.getPopularMovie().asLiveData()
+
+
+
 }

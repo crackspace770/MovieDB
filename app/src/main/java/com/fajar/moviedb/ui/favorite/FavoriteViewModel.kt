@@ -8,5 +8,9 @@ import javax.inject.Inject
 
 @HiltViewModel
 class FavoriteViewModel @Inject constructor(private val movieUseCase: MovieUseCase): ViewModel() {
+
     val favoriteMovie = movieUseCase.getFavoriteMovie().asLiveData()
+
+    val favoriteTv = movieUseCase.getFavoriteTv().asLiveData()
+
 }

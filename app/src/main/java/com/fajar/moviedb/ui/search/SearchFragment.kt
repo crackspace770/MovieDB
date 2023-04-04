@@ -11,6 +11,7 @@ import com.fajar.moviedb.R
 import com.fajar.moviedb.core.data.Resource
 import com.fajar.moviedb.core.ui.MovieAdapter
 import com.fajar.moviedb.core.ui.SearchAdapter
+import com.fajar.moviedb.core.ui.TvAdapter
 import com.fajar.moviedb.databinding.FragmentHomeBinding
 import com.fajar.moviedb.databinding.FragmentSearchBinding
 import com.fajar.moviedb.ui.detail.DetailActivity
@@ -21,7 +22,7 @@ class SearchFragment: Fragment() {
 
     private var _binding: FragmentSearchBinding? = null
     private val binding get() = _binding!!
-    private val movieAdapter = SearchAdapter()
+    private val movieAdapter = MovieAdapter()
     private val searchViewModel: SearchViewModel by viewModels()
 
     override fun onCreateView(
@@ -59,7 +60,7 @@ class SearchFragment: Fragment() {
     override fun onResume() {
         super.onResume()
         if (movieAdapter.itemCount > 0) {
-           // binding.onInitialSearchStateMessage.visibility = View.GONE
+            binding.onInitialSearchStateMessage.visibility = View.GONE
         }
     }
 
@@ -91,7 +92,7 @@ class SearchFragment: Fragment() {
                             progressBar.visibility = View.VISIBLE
                          //   emptyData.visibility = View.GONE
                          //   onFailMsg.visibility = View.GONE
-                         //   onInitialSearchStateMessage.visibility = View.GONE
+                            onInitialSearchStateMessage.visibility = View.GONE
                             rvResult.scrollToPosition(0)
                         }
                         searchViewModel.setSearchQuery(query)
@@ -123,7 +124,7 @@ class SearchFragment: Fragment() {
                                 swipeToRefresh.isRefreshing = false
                                 if (searchResult.isEmpty()){
                                    // onEmptyStateMessage.visibility = View.VISIBLE
-                                  //  onInitialSearchStateMessage.visibility = View.GONE
+                                    onInitialSearchStateMessage.visibility = View.GONE
                                 }
                             }
                         }

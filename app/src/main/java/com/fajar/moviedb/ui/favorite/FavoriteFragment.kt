@@ -2,25 +2,24 @@ package com.fajar.moviedb.ui.favorite
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
+import androidx.annotation.StringRes
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
+import by.kirich1409.viewbindingdelegate.viewBinding
+import com.fajar.moviedb.R
 import com.fajar.moviedb.core.ui.MovieAdapter
 import com.fajar.moviedb.databinding.FragmentFavoriteBinding
+
 import com.fajar.moviedb.ui.detail.DetailActivity
+import com.google.android.material.tabs.TabLayoutMediator
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class FavoriteFragment : Fragment() {
 
-    //@Inject
-  //  lateinit var factory: ViewModelFactory
-
     private val favoriteViewModel: FavoriteViewModel by viewModels()
-
     private var _binding: FragmentFavoriteBinding? = null
     private val binding get() = _binding!!
 
@@ -31,11 +30,6 @@ class FavoriteFragment : Fragment() {
         _binding = FragmentFavoriteBinding.inflate(inflater, container, false)
         return binding.root
     }
-
-  //  override fun onAttach(context: Context) {
- //       super.onAttach(context)
- //       (requireActivity().application as MyApplication).appComponent.inject(this)
- //   }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -48,9 +42,6 @@ class FavoriteFragment : Fragment() {
                 intent.putExtra(DetailActivity.EXTRA_DATA, selectedData)
                 startActivity(intent)
             }
-
-           // val factory = ViewModelFactory.getInstance(requireActivity())
-           // favoriteViewModel = ViewModelProvider(this, factory)[FavoriteViewModel::class.java]
 
             favoriteViewModel.favoriteMovie.observe(viewLifecycleOwner) { dataTourism ->
                 tourismAdapter.setData(dataTourism)
