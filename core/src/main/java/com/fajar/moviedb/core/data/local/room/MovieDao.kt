@@ -20,10 +20,10 @@ interface MovieDao {
     @Query("SELECT * FROM MovieEntities ")
     fun getPopularTv(): Flow<List<MovieEntity>>
 
-    @Query("SELECT * FROM MovieEntities WHERE isFavorite = 1")
+    @Query("SELECT * FROM MovieEntities WHERE isFavorite = 1 AND isTvShow = 0")
     fun getFavoriteMovie(): Flow<List<MovieEntity>>
 
-    @Query("SELECT * FROM MovieEntities WHERE isFavorite = 1")
+    @Query("SELECT * FROM MovieEntities WHERE isFavorite = 1 AND isTvShow = 1")
     fun getFavoriteTv(): Flow<List<MovieEntity>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)

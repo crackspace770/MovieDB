@@ -22,7 +22,9 @@ class MovieRepository @Inject constructor(
     private val appExecutors: AppExecutor
     ): IMovieRepository {
 
-    override fun getTrendingMovie(sort: String): Flow<Resource<List<Movie>>> {
+
+    //fragment movie
+    override fun getTrendingMovie(sort: String, shouldFetchAgain: Boolean): Flow<Resource<List<Movie>>> {
         return object :
             NetworkBoundResource<List<Movie>, ListMovieResponse>() {
 
@@ -33,7 +35,7 @@ class MovieRepository @Inject constructor(
             }
 
             override fun shouldFetch(data: List<Movie>?): Boolean {
-                return data == null || data.isEmpty() || data.size <= 10
+                return data == null || data.isEmpty() || data.size <= 10 || shouldFetchAgain
             }
 
             override suspend fun createCall(): Flow<ApiResponse<ListMovieResponse>> =
@@ -43,13 +45,12 @@ class MovieRepository @Inject constructor(
                 val movieList = DataMapper.mapResponsesToEntities(data)
                 localDataSource.insertMovie(movieList)
             }
-
-
         }.asFlow()
     }
 
 
-    override fun getTrendingTv(sort: String): Flow<Resource<List<Movie>>> {
+    //fragment tv
+    override fun getTrendingTv(sort: String, shouldFetchAgain: Boolean): Flow<Resource<List<Movie>>> {
         return object :
             NetworkBoundResource<List<Movie>, ListTvResponse>() {
             override fun loadFromDB(): Flow<List<Movie>> {
@@ -59,7 +60,7 @@ class MovieRepository @Inject constructor(
             }
 
             override fun shouldFetch(data: List<Movie>?): Boolean {
-                return data == null || data.isEmpty() || data.size <= 10
+                return data == null || data.isEmpty() || data.size <= 10|| shouldFetchAgain
             }
 
             override suspend fun createCall(): Flow<ApiResponse<ListTvResponse>> {
@@ -73,6 +74,7 @@ class MovieRepository @Inject constructor(
     }
 
 
+    //fragment main
     override fun getPopularMovie(): Flow<Resource<List<Movie>>> {
         return object :
             NetworkBoundResource<List<Movie>, ListMovieResponse>(){
@@ -98,6 +100,7 @@ class MovieRepository @Inject constructor(
     }
 
 
+    //fragment main
     override fun getPopularTv(): Flow<Resource<List<Movie>>> =
         object : NetworkBoundResource<List<Movie>, ListTvResponse>(){
             override fun loadFromDB(): Flow<List<Movie>> {
@@ -119,6 +122,20 @@ class MovieRepository @Inject constructor(
                 localDataSource.insertTv(movieList)
             }
         }.asFlow()
+
+
+    override fun getTrendingThisWeekList(): Flow<Resource<List<Movie>>> {
+        return object :
+            NetworkOnlyResource<List<Movie>, MultiResponse>() {
+            override suspend fun createCall(): Flow<ApiResponse<MultiResponse>> {
+                return remoteDataSource.getTrendingThisWeekList()
+            }
+
+            override suspend fun loadFromNetwork(data: MultiResponse): Flow<List<Movie>> {
+                return flowOf(DataMapper.mapMultiResponsesToDomain(data))
+            }
+        }.asFlow()
+    }
 
 
 

@@ -12,7 +12,6 @@ import com.fajar.moviedb.R
 import com.fajar.moviedb.core.data.Resource
 import com.fajar.moviedb.core.domain.model.Movie
 import com.fajar.moviedb.core.utils.Constant.Companion.IMAGE_BASE_URL
-import com.fajar.moviedb.databinding.ActivityDetailBinding
 import com.fajar.moviedb.databinding.ActivityDetailsBinding
 import com.fajar.moviedb.ui.home.HomeViewModel
 import com.fajar.moviedb.ui.tv.TvViewModel
@@ -65,7 +64,7 @@ class DetailActivity: AppCompatActivity() {
                 movieTitle = it.title ?: getString(R.string.no_data)
                 showDetailMovie(it)
             }
-            // icLoading.visibility = View.VISIBLE
+             progressBar.visibility = View.VISIBLE
             //  onFailMsg.visibility = View.GONE
             movie?.let { movieModel.setSelectedMovie(it) }
             movieModel.movieDetail.observe(this@DetailActivity) { movie ->
@@ -130,8 +129,9 @@ class DetailActivity: AppCompatActivity() {
                 tvDescription.text = overview
                 tvGenre.text=  if (genres == null || genres == "") getString(R.string.no_genre_data) else genres
                 tvRating.text= voteAverage.toString()
-                tvPopularity.text= popularity.toString()
+              //  tvPopularity.text= popularity.toString()
                 ivDetailImage.loadImage("${IMAGE_BASE_URL}${backdropPath}")
+                ivPoster.loadImage("${IMAGE_BASE_URL}${posterPath}")
 
 
                 if (releaseDate == null || releaseDate == "") {
@@ -170,7 +170,7 @@ class DetailActivity: AppCompatActivity() {
                 var statusFavorite = isFavorite
                 setStatusFavorite(statusFavorite)
 
-                fab.setOnClickListener {
+                favorite.setOnClickListener {
                     statusFavorite = !statusFavorite
                     detailViewModel.setFavoriteMovie(movie, statusFavorite)
                     setStatusFavorite(statusFavorite)
@@ -193,9 +193,9 @@ class DetailActivity: AppCompatActivity() {
 
     private fun setStatusFavorite(statusFavorite: Boolean) {
         if (statusFavorite) {
-            binding.fab.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_favorite_selected))
+            binding.favorite.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_unlove))
         } else {
-            binding.fab.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_favorite_unselected))
+            binding.favorite.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_love))
         }
     }
 

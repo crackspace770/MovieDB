@@ -59,7 +59,7 @@
                 android:id="@+id/tv_item_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                tools:text="@string/text_primary"
+                tools:text="Title"
                 android:textAppearance="@style/TextAppearance.AppCompat.Headline"
                 android:textColor="#FFFFFFFF"
                 app:layout_constraintBottom_toTopOf="@+id/tv_item_subtitle"
@@ -72,12 +72,13 @@
                 android:id="@+id/tv_item_subtitle"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
+                android:textSize="20sp"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textColor="#B3FFFFFF"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                tools:text="@string/text_subtitle" />
+                tools:text="9.9" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

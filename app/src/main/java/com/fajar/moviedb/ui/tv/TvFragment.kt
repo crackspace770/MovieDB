@@ -7,7 +7,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
-import by.kirich1409.viewbindingdelegate.viewBinding
 import com.fajar.moviedb.R
 import com.fajar.moviedb.core.data.Resource
 import com.fajar.moviedb.core.domain.model.Movie
@@ -48,24 +47,7 @@ class TvFragment : Fragment(R.layout.fragment_tv) {
                 startActivity(intent)
             }
 
-            viewModel.popularTv.observe(viewLifecycleOwner) { movie ->
-                if (movie != null) {
-                    when (movie) {
-                        is Resource.Loading -> binding.progressBar.visibility = View.VISIBLE
-                        is Resource.Success -> {
-                            binding.progressBar.visibility = View.GONE
-                            movie.data?.let { tvAdapter.setData(it) }
-                        }
-                        is Resource.Error -> {
-                            binding.progressBar.visibility = View.GONE
-                            binding.viewError.root.visibility = View.VISIBLE
-                            binding.viewError.tvError.text =
-                                movie.message ?: getString(R.string.something_wrong)
-                        }
-                    }
-                }
-            }
-
+            findMovieList(false)
 
 
             with(binding.rvMovie) {
@@ -74,7 +56,69 @@ class TvFragment : Fragment(R.layout.fragment_tv) {
                 adapter = tvAdapter
             }
 
+            binding.apply {
+
+                swipeToRefresh.setOnRefreshListener {
+                    findMovieList(true)
+                }
+
+            }
+
+
         }
+    }
+
+    private fun findMovieList(shouldFetchAgain: Boolean){
+        binding.apply {
+            progressBar.visibility = View.VISIBLE
+            //  btnTryAgain.visibility = View.GONE
+            // viewError.visibility = View.GONE
+            viewModel.getPopularTvList(SortUtils.POPULAR, shouldFetchAgain).observe(viewLifecycleOwner, movieObserver)
+        }
+    }
+
+    private val movieObserver = Observer<Resource<List<Movie>>> { movieList ->
+        binding.apply {
+            if(movieList != null){
+                when (movieList) {
+                    is Resource.Loading -> binding.progressBar.visibility = View.VISIBLE
+                    is Resource.Success -> {
+                        binding.progressBar.visibility = View.GONE
+                        movieList.data?.let { tvAdapter.setData(it) }
+                    }
+                    is Resource.Error -> {
+                        binding.progressBar.visibility = View.GONE
+                        binding.viewError.root.visibility = View.VISIBLE
+                        binding.viewError.tvError.text =
+                            movieList.message ?: getString(R.string.something_wrong)
+                    }
+                }
+            }
+        }
+
+    }
+
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.sorting_data_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        var sort = ""
+        when (item.itemId) {
+            R.id.action_popular -> sort = SortUtils.POPULAR
+            R.id.action_latest_release -> sort = SortUtils.LATEST
+            R.id.action_oldest_release -> sort = SortUtils.OLDEST
+            R.id.action_best_vote -> sort = SortUtils.BEST
+            R.id.action_worst_vote -> sort = SortUtils.WORST
+            R.id.action_random -> sort = SortUtils.RANDOM
+        }
+        binding.apply {
+            viewModel.getPopularTvList(sort, false).observe(viewLifecycleOwner, movieObserver)
+        }
+        item.isChecked = true
+        return super.onOptionsItemSelected(item)
+
     }
 
     override fun onDestroyView() {

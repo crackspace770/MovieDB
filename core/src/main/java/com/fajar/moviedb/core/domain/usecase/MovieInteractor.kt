@@ -6,20 +6,20 @@ import javax.inject.Inject
 
 class MovieInteractor @Inject constructor (private val movieRepository: IMovieRepository): MovieUseCase {
 
-    override fun getTrendingMovie(sort: String) = movieRepository
-        .getTrendingMovie(sort)
+    override fun getTrendingMovie(sort: String, shouldFetchAgain: Boolean) = movieRepository
+        .getTrendingMovie(sort,shouldFetchAgain)
 
-    override fun getTrendingTv(sort: String) = movieRepository
-        .getTrendingTv(sort)
+    override fun getTrendingTv(sort: String, shouldFetchAgain: Boolean) = movieRepository
+        .getTrendingTv(sort,shouldFetchAgain)
+
+    override fun getTrendingThisWeekList() = movieRepository.getTrendingThisWeekList()
 
     override fun getPopularMovie() = movieRepository.getPopularMovie()
-
     override fun getPopularTv() = movieRepository.getPopularTv()
     
     override fun getSearchMovie(query: String) = movieRepository.getSearchMovie(query)
 
     override fun getFavoriteMovie() = movieRepository.getFavoriteMovie()
-
     override fun getFavoriteTv() = movieRepository.getFavoriteTv()
 
     override fun getMovieDetail(movie: Movie) = movieRepository.getMovieDetail(movie)
@@ -28,7 +28,6 @@ class MovieInteractor @Inject constructor (private val movieRepository: IMovieRe
 
     override fun setFavoriteMovie(tourism: Movie, state: Boolean) = movieRepository
         .setFavoriteMovie(tourism, state)
-
     override fun setFavoriteTv(tv: Movie, state: Boolean) = movieRepository
         .setFavoriteTv(tv, state)
 

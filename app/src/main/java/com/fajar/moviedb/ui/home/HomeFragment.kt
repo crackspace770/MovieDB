@@ -48,24 +48,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
                 startActivity(intent)
             }
 
-            homeViewModel.popularMovie.observe(viewLifecycleOwner) { movie ->
-                if (movie != null) {
-                    when (movie) {
-                        is Resource.Loading -> binding.progressBar.visibility = View.VISIBLE
-                        is Resource.Success -> {
-                            binding.progressBar.visibility = View.GONE
-                            movie.data?.let { movieAdapter.setData(it) }
-                        }
-                        is Resource.Error -> {
-                            binding.progressBar.visibility = View.GONE
-                            binding.viewError.root.visibility = View.VISIBLE
-                            binding.viewError.tvError.text =
-                                movie.message ?: getString(R.string.something_wrong)
-                        }
-                    }
-                }
-            }
-
+            findMovieList(false)
 
 
             with(binding.rvMovie) {
@@ -74,27 +57,63 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
                 adapter = movieAdapter
             }
 
-
+            binding.swipeToRefresh.setOnRefreshListener {
+                findMovieList(true)
+            }
 
         }
     }
 
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.normal_menu, menu)
+    private fun findMovieList(shouldFetchAgain: Boolean){
+        binding.apply {
+            progressBar.visibility = View.VISIBLE
+          //  btnTryAgain.visibility = View.GONE
+          // viewError.visibility = View.GONE
+            homeViewModel.getPopularMoviesList(SortUtils.POPULAR, shouldFetchAgain).observe(viewLifecycleOwner, movieObserver)
+        }
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-
-            R.id.action_settings -> {
-                val uri = Uri.parse("moviedb://setting")
-                startActivity(Intent(Intent.ACTION_VIEW, uri))
-                true
+    private val movieObserver = Observer<Resource<List<Movie>>> { movieList ->
+        binding.apply {
+            if(movieList != null){
+                when (movieList) {
+                    is Resource.Loading -> binding.progressBar.visibility = View.VISIBLE
+                    is Resource.Success -> {
+                        binding.progressBar.visibility = View.GONE
+                        movieList.data?.let { movieAdapter.setData(it) }
+                    }
+                    is Resource.Error -> {
+                        binding.progressBar.visibility = View.GONE
+                        binding.viewError.root.visibility = View.VISIBLE
+                        binding.viewError.tvError.text =
+                            movieList.message ?: getString(R.string.something_wrong)
+                    }
+                }
             }
         }
 
+    }
 
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.sorting_data_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        var sort = ""
+        when (item.itemId) {
+            R.id.action_popular -> sort = SortUtils.POPULAR
+            R.id.action_latest_release -> sort = SortUtils.LATEST
+            R.id.action_oldest_release -> sort = SortUtils.OLDEST
+            R.id.action_best_vote -> sort = SortUtils.BEST
+            R.id.action_worst_vote -> sort = SortUtils.WORST
+            R.id.action_random -> sort = SortUtils.RANDOM
+        }
+        binding.apply {
+            homeViewModel.getPopularMoviesList(sort, false).observe(viewLifecycleOwner, movieObserver)
+        }
+        item.isChecked = true
         return super.onOptionsItemSelected(item)
+
     }
 
     override fun onDestroyView() {

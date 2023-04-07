@@ -7,8 +7,11 @@ import kotlinx.coroutines.flow.Flow
 interface IMovieRepository {
 
 
-    fun getTrendingMovie(sort: String): Flow<Resource<List<Movie>>>
-    fun getTrendingTv(sort: String): Flow<Resource<List<Movie>>>
+    fun getTrendingMovie(sort: String, shouldFetchAgain: Boolean): Flow<Resource<List<Movie>>>
+    fun getTrendingTv(sort: String, shouldFetchAgain: Boolean): Flow<Resource<List<Movie>>>
+
+    fun getTrendingThisWeekList(): Flow<Resource<List<Movie>>>
+
 
     fun getPopularMovie(): Flow<Resource<List<Movie>>>
     fun getPopularTv():Flow<Resource<List<Movie>>>

@@ -9,9 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.fajar.moviedb.core.data.Resource
-import com.fajar.moviedb.core.ui.MovieAdapter
-import com.fajar.moviedb.core.ui.TvAdapter
-import com.fajar.moviedb.core.utils.SortUtils
+import com.fajar.moviedb.core.ui.MainAdapter
 import com.fajar.moviedb.databinding.FragmentMainBinding
 import com.fajar.moviedb.ui.detail.DetailActivity
 import dagger.hilt.android.AndroidEntryPoint
@@ -23,8 +21,9 @@ class MainFragment: Fragment() {
     private val viewModel: MainViewModel by viewModels()
     private var _binding: FragmentMainBinding? = null
     private val binding get() = _binding!!
-    private val movieAdapter = TvAdapter()
-    private val tvAdapter = TvAdapter()
+    private val movieAdapter = MainAdapter()
+    private val tvAdapter = MainAdapter()
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -38,20 +37,22 @@ class MainFragment: Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         if(activity != null){
-            val movieAdapter = TvAdapter()
 
-            movieAdapter.onItemClick = { selectedData ->
+            /*
+              val mainAdapter = MainAdapter()
+            mainAdapter.onItemClick = { selectedData ->
                 val intent = Intent(activity, DetailActivity::class.java)
                 intent.putExtra(DetailActivity.EXTRA_DATA, selectedData)
                 startActivity(intent)
             }
 
-            tvAdapter.onItemClick = { selectedData ->
+            mainAdapter.onItemClick = { selectedData ->
                 val intent = Intent(activity, DetailActivity::class.java)
                 intent.putExtra(DetailActivity.EXTRA_DATA, selectedData)
                 startActivity(intent)
             }
 
+             */
             binding.apply {
 
                 rvMovie.apply {
@@ -63,7 +64,19 @@ class MainFragment: Fragment() {
                 rvTv.apply {
                     layoutManager =
                         LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-                    adapter = movieAdapter
+                    adapter = tvAdapter
+                }
+
+
+                movieAdapter.onItemClick = { selectedData ->
+                    val moveToDetail = Intent(requireContext(), DetailActivity::class.java)
+                    moveToDetail.putExtra(DetailActivity.EXTRA_FILM, selectedData)
+                    startActivity(moveToDetail)
+                }
+                tvAdapter.onItemClick = { selectedData ->
+                    val moveToDetail = Intent(requireContext(), DetailActivity::class.java)
+                    moveToDetail.putExtra(DetailActivity.EXTRA_FILM, selectedData)
+                    startActivity(moveToDetail)
                 }
 
                 findUpcomingMovies()
@@ -71,11 +84,11 @@ class MainFragment: Fragment() {
 
 
 
-               // swipeToRefresh.setOnRefreshListener {
-               //     findUpcomingMovies()
-              //      findTopTvShows()
-              //      swipeToRefresh.isRefreshing = false
-             //   }
+                swipeToRefresh.setOnRefreshListener {
+                    findUpcomingMovies()
+                    findTopTvShows()
+                    swipeToRefresh.isRefreshing = false
+                }
 
             }
 
@@ -88,7 +101,7 @@ class MainFragment: Fragment() {
         binding.apply {
          //   progressBar.visibility = View.VISIBLE
             //onFailMsg.visibility = View.GONE
-            viewModel.popularMovie
+            viewModel.getUpcomingMovies()
                 .observe(viewLifecycleOwner) { movieList ->
                     if (movieList != null) {
                         when (movieList) {
@@ -116,7 +129,7 @@ class MainFragment: Fragment() {
         //    progressBar.visibility = View.VISIBLE
             //btnTryAgain.visibility = View.GONE
            // onFailMsg.visibility = View.GONE
-            viewModel.popularTv
+            viewModel.getTopTvShowList()
                 .observe(viewLifecycleOwner) { tvShowList ->
                         when (tvShowList) {
                             is Resource.Loading -> {

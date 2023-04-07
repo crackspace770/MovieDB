@@ -22,6 +22,10 @@ class TvViewModel @Inject constructor(private val movieUseCase: MovieUseCase) : 
             movieUseCase.getTvDetail(movie).asLiveData()
         }
 
+    fun getPopularTvList(sort: String, shouldFetchAgain: Boolean): LiveData<Resource<List<Movie>>> {
+        return movieUseCase.getTrendingTv(sort, shouldFetchAgain).asLiveData()
+    }
+
     fun getPopularTvList(): LiveData<Resource<List<Movie>>> {
         return movieUseCase.getPopularTv().asLiveData()
     }

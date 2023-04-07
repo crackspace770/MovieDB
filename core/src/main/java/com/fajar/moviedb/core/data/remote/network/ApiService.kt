@@ -23,6 +23,24 @@ interface ApiService {
         @Query("api_key") apiKey: String
     ): ListTvResponse
 
+
+    @GET("movie/upcoming")
+    suspend fun getUpcomingMovieList(
+        @Query("api_key") apiKey: String
+    ): ListMovieResponse
+
+    @GET("tv/top_rated")
+    suspend fun getTopTvShowList(
+        @Query("api_key") apiKey: String
+    ): ListTvResponse
+
+
+    @GET("trending/all/week")
+    suspend fun getTrendingThisWeekList(
+        @Query("api_key") apiKey: String
+    ): MultiResponse
+
+
     @GET("movie/{movie_id}")
     suspend fun getDetailMovie(
         @Path("movie_id") movieId: Int,

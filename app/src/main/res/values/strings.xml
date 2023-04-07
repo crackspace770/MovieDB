@@ -75,6 +75,7 @@
 
     <string name="appbar_scrolling_view_behavior" translatable="false">com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior</string>
     <string name="poster">poster</string>
+    <string name="poster_film">poster_film</string>
 
 
 </resources>

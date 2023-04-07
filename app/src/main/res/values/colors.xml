@@ -18,4 +18,10 @@
     <color name="light_200">#bfc8d2</color>
     <color name="dark_400">#17212b</color>
     <color name="blue">#386BE0</color>
+
+    <color name="colorAccent">#f9826c</color>
+    <color name="colorGrey">#586069</color>
+    <color name="colorBlack">#333333</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorBlue">#0366d6</color>
 </resources>

@@ -93,7 +93,23 @@ class RemoteDataSource @Inject constructor(private val apiService: ApiService) {
         }.flowOn(Dispatchers.IO)
     }
 
-
+    suspend fun getTrendingThisWeekList(): Flow<ApiResponse<MultiResponse>> {
+        return flow {
+            try {
+                val response = apiService.getTrendingThisWeekList(apiKey)
+                val movieList = response.results
+                if (movieList.isNotEmpty()) {
+                    emit(ApiResponse.Success(response))
+                } else {
+                    emit(ApiResponse.Empty(response))
+                }
+            } catch (e: Exception) {
+                emit(ApiResponse.Error(e.toString()))
+                Log.e("RemoteDataSource", "Failed to Get Trending Movie List")
+                Log.e("RemoteDataSource", e.message.toString())
+            }
+        }.flowOn(Dispatchers.IO)
+    }
 
     suspend fun searchMovie(query:String): Flow<ApiResponse<MultiResponse>> {
         //get data from remote api

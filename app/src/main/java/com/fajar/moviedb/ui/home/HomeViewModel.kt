@@ -23,6 +23,10 @@ class HomeViewModel @Inject constructor(private val movieUseCase: MovieUseCase) 
             movieUseCase.getMovieDetail(movie).asLiveData()
         }
 
+    fun getPopularMoviesList(sort: String, shouldFetchAgain: Boolean): LiveData<Resource<List<Movie>>> {
+        return movieUseCase.getTrendingMovie(sort, shouldFetchAgain).asLiveData()
+    }
+
     fun getPopularMoviesList(): LiveData<Resource<List<Movie>>> {
         return movieUseCase.getPopularMovie().asLiveData()
     }
