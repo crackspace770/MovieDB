@@ -44,7 +44,7 @@ class SearchFragment: Fragment() {
                 }
                 movieAdapter.onItemClick = { selectedData ->
                     val moveToDetail = Intent(requireContext(), DetailActivity::class.java)
-                    moveToDetail.putExtra(DetailActivity.EXTRA_DATA, selectedData)
+                    moveToDetail.putExtra(DetailActivity.EXTRA_FILM, selectedData)
                     startActivity(moveToDetail)
                 }
                 swipeToRefresh.setOnRefreshListener {

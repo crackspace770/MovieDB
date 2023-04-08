@@ -18,13 +18,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:behavior_overlapTop="80dp">
+
+
 
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/CardView"
             style="@style/custom_card_view_style"
-            android:layout_width="400dp"
-            android:layout_height="650dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:layout_marginTop="200dp"
 
@@ -38,8 +44,8 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/constraint"
                 style="@style/custom_card_view_style"
-                android:layout_width="400dp"
-                android:layout_height="700dp"
+                android:layout_width="match_parent"
+                android:layout_height="695dp"
                 android:orientation="vertical"
 
                 android:padding="10dp"
@@ -48,14 +54,15 @@
 
                 <TextView
                     android:id="@+id/tv_title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="40dp"
-                    android:layout_marginEnd="8dp"
+                    android:layout_width="267dp"
+                    android:layout_height="72dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginEnd="16dp"
                     android:text="@string/name"
                     android:textAlignment="center"
-                    android:textSize="32sp"
+                    android:textSize="28sp"
+                    android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -73,8 +80,8 @@
 
                 <TextView
                     android:id="@+id/tv_description"
-                    android:layout_width="362dp"
-                    android:layout_height="128dp"
+                    android:layout_width="336dp"
+                    android:layout_height="168dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="16dp"
                     android:layout_marginEnd="8dp"
@@ -89,7 +96,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="16dp"
                     android:layout_marginRight="16dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -158,10 +165,11 @@
                     app:layout_constraintTop_toBottomOf="@+id/tvRelease" />
 
                 <ImageView
-                    android:id="@+id/favorite"
+                    android:id="@+id/btnFavorite"
                     android:layout_width="43dp"
                     android:layout_height="35dp"
-                    android:layout_marginEnd="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
                     android:clickable="true"
                     android:contentDescription="Add"
                     android:focusable="true"
@@ -172,8 +180,8 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-
         </com.google.android.material.card.MaterialCardView>
+    </androidx.core.widget.NestedScrollView>
 
 
         <ProgressBar

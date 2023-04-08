@@ -6,6 +6,16 @@
     app:startDestination="@+id/navigation_home">
 
     <fragment
+        android:id="@+id/navigation_main"
+        android:name="com.fajar.moviedb.ui.main.MainFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_navigation_home_to_detailActivity"
+            app:destination="@id/detailActivity" />
+    </fragment>
+
+    <fragment
         android:id="@+id/navigation_home"
         android:name="com.fajar.moviedb.ui.home.HomeFragment"
         android:label="@string/title_home"

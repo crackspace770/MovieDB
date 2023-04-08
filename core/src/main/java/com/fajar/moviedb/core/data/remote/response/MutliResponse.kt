@@ -41,4 +41,5 @@ data class MultiResultsItem(
 
     @field:SerializedName("media_type")
     val mediaType: String,
+
 )

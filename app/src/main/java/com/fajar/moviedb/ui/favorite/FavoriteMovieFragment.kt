@@ -8,11 +8,14 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.fajar.moviedb.R
 import com.fajar.moviedb.core.ui.MovieAdapter
 import com.fajar.moviedb.databinding.FragmentMovieFavoriteBinding
 import com.fajar.moviedb.ui.detail.DetailActivity
+import dagger.hilt.android.AndroidEntryPoint
 
-class FavoriteMovieFragment: Fragment()   {
+@AndroidEntryPoint
+class FavoriteMovieFragment: Fragment(R.layout.fragment_movie_favorite)   {
 
     private val favoriteViewModel: FavoriteViewModel by viewModels()
     private var _binding: FragmentMovieFavoriteBinding? = null
@@ -41,7 +44,7 @@ class FavoriteMovieFragment: Fragment()   {
 
             movieAdapter.onItemClick = { selectedData ->
                 val intent = Intent(activity, DetailActivity::class.java)
-                intent.putExtra(DetailActivity.EXTRA_DATA, selectedData)
+                intent.putExtra(DetailActivity.EXTRA_FILM, selectedData)
                 startActivity(intent)
             }
 

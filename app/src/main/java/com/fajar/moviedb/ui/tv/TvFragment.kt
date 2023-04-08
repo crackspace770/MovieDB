@@ -43,7 +43,7 @@ class TvFragment : Fragment(R.layout.fragment_tv) {
             tvAdapter = MovieAdapter()
             tvAdapter.onItemClick = { selectedData ->
                 val intent = Intent(activity, DetailActivity::class.java)
-                intent.putExtra(DetailActivity.EXTRA_DATA, selectedData)
+                intent.putExtra(DetailActivity.EXTRA_FILM, selectedData)
                 startActivity(intent)
             }
 

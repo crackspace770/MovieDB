@@ -30,6 +30,31 @@ object DataMapper {
         return movieList
     }
 
+    /*
+      TV Response To Entity
+    */
+    fun mapTvResponsesToEntities(data: ListTvResponse): List<MovieEntity> {
+        val tvShowList = ArrayList<MovieEntity>()
+        data.results.forEach {
+            val tvShow = MovieEntity(
+                it.id,
+                it.title,
+                it.releaseDate,
+                it.overview,
+                null,
+                null,
+                null,
+                it.voteAverage,
+                it.popularity,
+                it.posterPath,
+                it.backdropPath,
+                isTvShow = true
+            )
+            tvShowList.add(tvShow)
+        }
+        return tvShowList
+    }
+
     fun mapTvToEntities(input: ListTvResponse): List<MovieEntity> {
         val movieList = ArrayList<MovieEntity>()
         input.results.forEach {

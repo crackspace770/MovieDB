@@ -44,7 +44,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             movieAdapter = MovieAdapter()
             movieAdapter.onItemClick = { selectedData ->
                 val intent = Intent(activity, DetailActivity::class.java)
-                intent.putExtra(DetailActivity.EXTRA_DATA, selectedData)
+                intent.putExtra(DetailActivity.EXTRA_FILM, selectedData)
                 startActivity(intent)
             }
 

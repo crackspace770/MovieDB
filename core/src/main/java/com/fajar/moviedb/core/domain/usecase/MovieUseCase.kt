@@ -23,4 +23,6 @@ interface MovieUseCase {
 
     fun setFavoriteMovie(tourism: Movie, state: Boolean)
     fun setFavoriteTv(tv:Movie, state: Boolean)
+
+    suspend fun insertPlaylistItem(item: Movie, state: Boolean)
 }

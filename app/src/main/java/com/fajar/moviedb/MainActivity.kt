@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
         navView.setupWithNavController(navController)
         navView.setOnItemSelectedListener {
             when (it.itemId){
-              //  R.id.navigation_main -> setFragment(MainFragment())
+                R.id.navigation_main -> setFragment(MainFragment())
                 R.id.navigation_home -> setFragment(HomeFragment())
                 R.id.navigation_tv -> setFragment(TvFragment())
                 R.id.navigation_search -> setFragment(SearchFragment())

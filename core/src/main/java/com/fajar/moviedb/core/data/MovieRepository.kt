@@ -68,7 +68,7 @@ class MovieRepository @Inject constructor(
             }
 
             override suspend fun saveCallResult(data: ListTvResponse) {
-                localDataSource.insertTv(DataMapper.mapTvToEntities(data))
+                localDataSource.insertTv(DataMapper.mapTvResponsesToEntities(data))
             }
         }.asFlow()
     }
@@ -201,6 +201,13 @@ class MovieRepository @Inject constructor(
     override fun setFavoriteTv(tv: Movie, state: Boolean) {
         val movieEntity = DataMapper.mapDomainToEntity(tv)
         appExecutors.diskIO().execute { localDataSource.setFavoriteMovie(movieEntity, state) }
+    }
+
+    override suspend fun insertPlaylistItem(item: Movie, state: Boolean) {
+        localDataSource.insertPlaylistItem(
+            DataMapper.mapDomainToEntity(item),
+            state
+        )
     }
 
 }

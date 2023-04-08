@@ -3,6 +3,7 @@ package com.fajar.moviedb.ui.detail
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -42,8 +43,12 @@ class DetailActivity: AppCompatActivity() {
 
         val film = intent.getParcelableExtra<Movie>(EXTRA_FILM)
 
-        val detailMovie = intent.getParcelableExtra<Movie>(EXTRA_DATA)
-        showDetailMovie(detailMovie)
+     //   val detailMovie = intent.getParcelableExtra<Movie>(EXTRA_DATA)
+   //     showDetailMovie(detailMovie)
+
+  //      binding.apply {
+  //          btnFavorite.setOnClickListener { btnFavoriteClick(movie) }
+  //      }
 
         if (film != null){
             if (film.isTvShow) {
@@ -121,6 +126,42 @@ class DetailActivity: AppCompatActivity() {
         }
     }
 
+    /*
+    private fun btnFavoriteClick(movie: Movie) {
+        binding.apply {
+            isFavorite = !isFavorite
+            if (isFavorite) {
+                if (movie.isTvShow)
+                    detailViewModel.setFavoriteTv(
+                        movie,
+                        isFavorite
+                    ) else detailViewModel.setFavoriteMovie(movie, isFavorite)
+                Toast.makeText(
+                    this@DetailActivity,
+                    getString(R.string.added_to_playlist),
+                    Toast.LENGTH_SHORT
+                ).show()
+              //  btnRemoveFromPlaylist.visibility = View.VISIBLE
+              //  btnAddToPlaylist.visibility = View.GONE
+            } else {
+                if (movie.isTvShow)
+                    tvShowViewModel.removeTvShowFromPlaylist(catalogue) else movieViewModel.removeMovieFromPlaylist(
+                    catalogue
+                )
+                Toast.makeText(
+                    this@DetailActivity,
+                    getString(R.string.removed_from_playlist),
+                    Toast.LENGTH_SHORT
+                ).show()
+            //    btnRemoveFromPlaylist.visibility = View.GONE
+                btnAddToPlaylist.visibility = View.VISIBLE
+            }
+
+
+        }
+    }
+    */
+
     private fun showDetailMovie(movie: Movie?) {
         binding.apply {
             movie?.apply {
@@ -165,14 +206,22 @@ class DetailActivity: AppCompatActivity() {
                     tvRuntime.text = getString(R.string.no_data)
                 }
 
-
-
                 var statusFavorite = isFavorite
                 setStatusFavorite(statusFavorite)
 
-                favorite.setOnClickListener {
+                btnFavorite.setOnClickListener {
+
+                    isFavorite = !isFavorite
+                    if (isFavorite) {
+                        if (movie.isTvShow)
+                            detailViewModel.setFavoriteTv(
+                                movie,
+                                isFavorite
+                            ) else detailViewModel.setFavoriteMovie(movie, isFavorite)
+                    }
                     statusFavorite = !statusFavorite
                     detailViewModel.setFavoriteMovie(movie, statusFavorite)
+                    detailViewModel.setFavoriteTv(movie, statusFavorite)
                     setStatusFavorite(statusFavorite)
                 }
             }
@@ -193,9 +242,9 @@ class DetailActivity: AppCompatActivity() {
 
     private fun setStatusFavorite(statusFavorite: Boolean) {
         if (statusFavorite) {
-            binding.favorite.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_unlove))
+            binding.btnFavorite.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_unlove))
         } else {
-            binding.favorite.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_love))
+            binding.btnFavorite.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_love))
         }
     }
 

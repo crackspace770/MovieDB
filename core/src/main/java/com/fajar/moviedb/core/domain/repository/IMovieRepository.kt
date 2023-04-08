@@ -27,5 +27,7 @@ interface IMovieRepository {
     fun setFavoriteMovie(movie: Movie, state: Boolean)
     fun setFavoriteTv(tv:Movie, state: Boolean)
 
+    suspend fun insertPlaylistItem(item: Movie, state: Boolean)
+
 
 }

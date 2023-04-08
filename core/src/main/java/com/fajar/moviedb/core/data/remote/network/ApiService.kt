@@ -18,7 +18,7 @@ interface ApiService {
         @Query("include_adult") includeAdult: Boolean
     ): MultiResponse
 
-    @GET("tv/popular")
+    @GET("tv/top_rated")
     suspend fun getPopularTv(
         @Query("api_key") apiKey: String
     ): ListTvResponse
