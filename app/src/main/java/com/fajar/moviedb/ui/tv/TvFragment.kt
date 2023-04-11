@@ -11,9 +11,7 @@ import com.fajar.moviedb.R
 import com.fajar.moviedb.core.data.Resource
 import com.fajar.moviedb.core.domain.model.Movie
 import com.fajar.moviedb.core.ui.MovieAdapter
-import com.fajar.moviedb.core.ui.TvAdapter
 import com.fajar.moviedb.core.utils.SortUtils
-import com.fajar.moviedb.databinding.FragmentHomeBinding
 import com.fajar.moviedb.databinding.FragmentTvBinding
 import com.fajar.moviedb.ui.detail.DetailActivity
 import dagger.hilt.android.AndroidEntryPoint

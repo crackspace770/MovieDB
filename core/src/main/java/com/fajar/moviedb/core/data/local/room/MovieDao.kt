@@ -32,6 +32,9 @@ interface MovieDao {
     @Update
     fun updateFavoriteMovie(tourism: MovieEntity)
 
+    @Delete
+    suspend fun removeFavorite(catalogueItem: MovieEntity)
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertNewPlaylistItem(catalogueItem: MovieEntity)
 }

@@ -7,14 +7,17 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_tv_favorite"
-        android:layout_width="364dp"
-        android:layout_height="635dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="351dp"
+        android:layout_height="582dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.019"
+        app:layout_constraintHorizontal_bias="0.542"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:listitem="@layout/item_list_tourism"/>
+        app:layout_constraintVertical_bias="0.38"
+        tools:listitem="@layout/item_list_new" />
 
     <include
         android:id="@+id/view_empty"
@@ -24,4 +27,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupBottomNavMenu(navController: NavController) {
-        setFragment(HomeFragment())
+        setFragment(MainFragment())
         val navView: BottomNavigationView = binding.navView
         navView.setupWithNavController(navController)
         navView.setOnItemSelectedListener {

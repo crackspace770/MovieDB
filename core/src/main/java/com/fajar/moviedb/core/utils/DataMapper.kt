@@ -38,8 +38,8 @@ object DataMapper {
         data.results.forEach {
             val tvShow = MovieEntity(
                 it.id,
-                it.title,
-                it.releaseDate,
+                it.name,
+                it.firstAirDate,
                 it.overview,
                 null,
                 null,
@@ -60,8 +60,8 @@ object DataMapper {
         input.results.forEach {
             val movie = MovieEntity(
                 it.id,
-                it.title,
-                it.releaseDate,
+                it.name,
+                it.firstAirDate,
                 it.overview,
                 it.genres,
                 it.runtime,
@@ -76,8 +76,6 @@ object DataMapper {
         }
         return movieList
     }
-
-
 
 
 

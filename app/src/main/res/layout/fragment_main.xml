@@ -22,16 +22,16 @@
                 android:id="@+id/tv_movie"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
+                android:layout_marginStart="4dp"
                 android:layout_marginTop="24dp"
                 android:text="@string/title_home"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/rvTrending" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_movie"
-                android:layout_width="396dp"
-                android:layout_height="245dp"
+                android:layout_width="348dp"
+                android:layout_height="239dp"
                 android:layout_marginTop="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -50,14 +50,38 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_tv"
-                android:layout_width="401dp"
-                android:layout_height="246dp"
+                android:layout_width="344dp"
+                android:layout_height="241dp"
                 android:layout_marginTop="8dp"
+                android:layout_marginBottom="50dp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.482"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_tv"
                 tools:listitem="@layout/item_list" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="16dp"
+                android:text="Trending this week"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvTrending"
+                android:layout_width="353dp"
+                android:layout_height="203dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView3"
+                tools:listitem="@layout/item_trending" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

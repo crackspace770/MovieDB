@@ -7,13 +7,17 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_movie_favorite"
-        android:layout_width="363dp"
-        android:layout_height="634dp"
-        android:layout_marginTop="1dp"
+        android:layout_width="373dp"
+        android:layout_height="539dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.461"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:listitem="@layout/item_list_tourism"/>
+        app:layout_constraintVertical_bias="0.157"
+        tools:listitem="@layout/item_list_new" />
 
     <include
         android:id="@+id/view_empty"

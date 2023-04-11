@@ -10,9 +10,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.fajar.moviedb.R
 import com.fajar.moviedb.core.data.Resource
 import com.fajar.moviedb.core.ui.MovieAdapter
-import com.fajar.moviedb.core.ui.SearchAdapter
-import com.fajar.moviedb.core.ui.TvAdapter
-import com.fajar.moviedb.databinding.FragmentHomeBinding
 import com.fajar.moviedb.databinding.FragmentSearchBinding
 import com.fajar.moviedb.ui.detail.DetailActivity
 import dagger.hilt.android.AndroidEntryPoint
@@ -42,6 +39,8 @@ class SearchFragment: Fragment() {
                     layoutManager = LinearLayoutManager(context)
                     adapter = movieAdapter
                 }
+
+
                 movieAdapter.onItemClick = { selectedData ->
                     val moveToDetail = Intent(requireContext(), DetailActivity::class.java)
                     moveToDetail.putExtra(DetailActivity.EXTRA_FILM, selectedData)

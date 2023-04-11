@@ -59,7 +59,7 @@ class RemoteDataSource @Inject constructor(private val apiService: ApiService) {
         //get data from remote api
         return flow {
             try {
-                val response = apiService.getPopularMovie(apiKey)
+                val response = apiService.getUpcomingMovieList(apiKey)
                 val movieList = response.results
                 if (movieList.isNotEmpty()) {
                     emit(ApiResponse.Success(response))
@@ -92,6 +92,8 @@ class RemoteDataSource @Inject constructor(private val apiService: ApiService) {
             }
         }.flowOn(Dispatchers.IO)
     }
+
+
 
     suspend fun getTrendingThisWeekList(): Flow<ApiResponse<MultiResponse>> {
         return flow {

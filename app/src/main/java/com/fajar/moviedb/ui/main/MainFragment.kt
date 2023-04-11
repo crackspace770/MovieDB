@@ -10,10 +10,10 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.fajar.moviedb.core.data.Resource
 import com.fajar.moviedb.core.ui.MainAdapter
+import com.fajar.moviedb.core.ui.TrendingAdapter
 import com.fajar.moviedb.databinding.FragmentMainBinding
 import com.fajar.moviedb.ui.detail.DetailActivity
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.android.synthetic.main.fragment_home.*
 
 @AndroidEntryPoint
 class MainFragment: Fragment() {
@@ -21,6 +21,7 @@ class MainFragment: Fragment() {
     private val viewModel: MainViewModel by viewModels()
     private var _binding: FragmentMainBinding? = null
     private val binding get() = _binding!!
+    private val trendingAdapter = TrendingAdapter()
     private val movieAdapter = MainAdapter()
     private val tvAdapter = MainAdapter()
 
@@ -38,22 +39,14 @@ class MainFragment: Fragment() {
 
         if(activity != null){
 
-            /*
-              val mainAdapter = MainAdapter()
-            mainAdapter.onItemClick = { selectedData ->
-                val intent = Intent(activity, DetailActivity::class.java)
-                intent.putExtra(DetailActivity.EXTRA_DATA, selectedData)
-                startActivity(intent)
-            }
 
-            mainAdapter.onItemClick = { selectedData ->
-                val intent = Intent(activity, DetailActivity::class.java)
-                intent.putExtra(DetailActivity.EXTRA_DATA, selectedData)
-                startActivity(intent)
-            }
-
-             */
             binding.apply {
+
+                rvTrending.apply {
+                    layoutManager =
+                        LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+                    adapter = trendingAdapter
+                }
 
                 rvMovie.apply {
                     layoutManager =
@@ -68,6 +61,12 @@ class MainFragment: Fragment() {
                 }
 
 
+                trendingAdapter.onItemClick = { selectedData ->
+                    val moveToDetail = Intent(requireContext(), DetailActivity::class.java)
+                    moveToDetail.putExtra(DetailActivity.EXTRA_FILM, selectedData)
+                    startActivity(moveToDetail)
+                }
+
                 movieAdapter.onItemClick = { selectedData ->
                     val moveToDetail = Intent(requireContext(), DetailActivity::class.java)
                     moveToDetail.putExtra(DetailActivity.EXTRA_FILM, selectedData)
@@ -79,12 +78,12 @@ class MainFragment: Fragment() {
                     startActivity(moveToDetail)
                 }
 
+                findTrendingShows()
                 findUpcomingMovies()
                 findTopTvShows()
 
-
-
                 swipeToRefresh.setOnRefreshListener {
+                    findTrendingShows()
                     findUpcomingMovies()
                     findTopTvShows()
                     swipeToRefresh.isRefreshing = false
@@ -93,8 +92,31 @@ class MainFragment: Fragment() {
             }
 
         }
+    }
 
-
+    private fun findTrendingShows() {
+        binding.apply {
+       //     loadingUpcomingMovie.visibility = View.VISIBLE
+       //     onFailMsg.visibility = View.GONE
+            viewModel.getTrendingThisWeekList()
+                .observe(viewLifecycleOwner) { movieList ->
+                    if (movieList != null) {
+                        when (movieList) {
+                            is Resource.Loading -> {
+                 //               loadingTrending.visibility = View.VISIBLE
+                            }
+                            is Resource.Success -> {
+                                movieList.data?.let { trendingAdapter.setData(it) }
+                    //            loadingTrending.visibility = View.GONE
+                            }
+                            is Resource.Error -> {
+                   //             loadingTrending.visibility = View.GONE
+                   //             onFailMsg.visibility = View.VISIBLE
+                            }
+                        }
+                    }
+                }
+        }
     }
 
    private fun findUpcomingMovies() {

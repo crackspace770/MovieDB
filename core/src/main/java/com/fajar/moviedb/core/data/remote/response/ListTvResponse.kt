@@ -15,11 +15,14 @@ data class TvItem(
     @field:SerializedName("id")
     val id: Int,
 
-    @field:SerializedName("title")
-    val title: String?,
+    @SerializedName("original_name")
+    val originalName: String,
 
-    @field:SerializedName("release_date")
-    val releaseDate: String?,
+    @field:SerializedName("name")
+    val name: String?,
+
+    @SerializedName("first_air_date")
+    val firstAirDate: String,
 
     @field:SerializedName("overview")
     val overview: String,

@@ -24,8 +24,6 @@
         app:behavior_overlapTop="80dp">
 
 
-
-
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/CardView"
             style="@style/custom_card_view_style"
@@ -77,6 +75,8 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+
 
                 <TextView
                     android:id="@+id/tv_description"
@@ -147,6 +147,21 @@
                             android:text="@string/runtime_info" />
                     </TableRow>
 
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp">
+
+                        <TextView
+                            style="@style/TextSpec.Field"
+                            android:text="@string/popularity" />
+
+                        <TextView
+                            android:id="@+id/tvPopularity"
+                            style="@style/TextSpec.Value"
+                            android:text="@string/popularity_info" />
+                    </TableRow>
+
 
                 </TableLayout>
 
@@ -172,7 +187,6 @@
                     android:layout_marginEnd="8dp"
                     android:clickable="true"
                     android:contentDescription="Add"
-                    android:focusable="true"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:srcCompat="@drawable/ic_love" />

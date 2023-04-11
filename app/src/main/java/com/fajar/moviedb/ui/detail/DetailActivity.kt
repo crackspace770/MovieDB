@@ -24,7 +24,6 @@ import java.util.*
 class DetailActivity: AppCompatActivity() {
 
     companion object {
-        const val EXTRA_DATA = "extra_data"
         const val EXTRA_FILM = "extra_film"
     }
 
@@ -42,14 +41,6 @@ class DetailActivity: AppCompatActivity() {
         setContentView(binding.root)
 
         val film = intent.getParcelableExtra<Movie>(EXTRA_FILM)
-
-     //   val detailMovie = intent.getParcelableExtra<Movie>(EXTRA_DATA)
-   //     showDetailMovie(detailMovie)
-
-  //      binding.apply {
-  //          btnFavorite.setOnClickListener { btnFavoriteClick(movie) }
-  //      }
-
         if (film != null){
             if (film.isTvShow) {
                 getDetailTvShow(film)
@@ -58,6 +49,7 @@ class DetailActivity: AppCompatActivity() {
 
             }
         }
+
 
 
     }
@@ -126,41 +118,6 @@ class DetailActivity: AppCompatActivity() {
         }
     }
 
-    /*
-    private fun btnFavoriteClick(movie: Movie) {
-        binding.apply {
-            isFavorite = !isFavorite
-            if (isFavorite) {
-                if (movie.isTvShow)
-                    detailViewModel.setFavoriteTv(
-                        movie,
-                        isFavorite
-                    ) else detailViewModel.setFavoriteMovie(movie, isFavorite)
-                Toast.makeText(
-                    this@DetailActivity,
-                    getString(R.string.added_to_playlist),
-                    Toast.LENGTH_SHORT
-                ).show()
-              //  btnRemoveFromPlaylist.visibility = View.VISIBLE
-              //  btnAddToPlaylist.visibility = View.GONE
-            } else {
-                if (movie.isTvShow)
-                    tvShowViewModel.removeTvShowFromPlaylist(catalogue) else movieViewModel.removeMovieFromPlaylist(
-                    catalogue
-                )
-                Toast.makeText(
-                    this@DetailActivity,
-                    getString(R.string.removed_from_playlist),
-                    Toast.LENGTH_SHORT
-                ).show()
-            //    btnRemoveFromPlaylist.visibility = View.GONE
-                btnAddToPlaylist.visibility = View.VISIBLE
-            }
-
-
-        }
-    }
-    */
 
     private fun showDetailMovie(movie: Movie?) {
         binding.apply {
@@ -170,7 +127,7 @@ class DetailActivity: AppCompatActivity() {
                 tvDescription.text = overview
                 tvGenre.text=  if (genres == null || genres == "") getString(R.string.no_genre_data) else genres
                 tvRating.text= voteAverage.toString()
-              //  tvPopularity.text= popularity.toString()
+                tvPopularity.text= popularity.toString()
                 ivDetailImage.loadImage("${IMAGE_BASE_URL}${backdropPath}")
                 ivPoster.loadImage("${IMAGE_BASE_URL}${posterPath}")
 
@@ -182,7 +139,7 @@ class DetailActivity: AppCompatActivity() {
                     val date = releaseDate.let { dateFormat.parse(it) }
                     if (date != null) {
                         val dateFormatted =
-                            SimpleDateFormat("dd MM yyyy", Locale.ENGLISH).format(date)
+                            SimpleDateFormat("dd-MM-yyyy", Locale.ENGLISH).format(date)
                         tvRelease.text = dateFormatted
                     } else {
                         tvRelease.text = getString(R.string.no_data)
@@ -206,19 +163,24 @@ class DetailActivity: AppCompatActivity() {
                     tvRuntime.text = getString(R.string.no_data)
                 }
 
-                var statusFavorite = isFavorite
-                setStatusFavorite(statusFavorite)
+                setFavorite(movie)
 
-                btnFavorite.setOnClickListener {
+            }
+        }
 
-                    isFavorite = !isFavorite
-                    if (isFavorite) {
-                        if (movie.isTvShow)
-                            detailViewModel.setFavoriteTv(
-                                movie,
-                                isFavorite
-                            ) else detailViewModel.setFavoriteMovie(movie, isFavorite)
-                    }
+    }
+
+    private fun setFavorite(movie: Movie){
+
+        binding.apply {
+            var statusFavorite = isFavorite
+            setStatusFavorite(statusFavorite)
+            btnFavorite.setOnClickListener {
+                isFavorite = !isFavorite
+                if (isFavorite) {
+                    if (movie.isTvShow)
+                        detailViewModel.setFavoriteTv(movie, isFavorite
+                        ) else detailViewModel.setFavoriteMovie(movie, isFavorite)
                     statusFavorite = !statusFavorite
                     detailViewModel.setFavoriteMovie(movie, statusFavorite)
                     detailViewModel.setFavoriteTv(movie, statusFavorite)
@@ -228,8 +190,6 @@ class DetailActivity: AppCompatActivity() {
         }
 
     }
-
-
 
 
     private fun ImageView.loadImage(url: String?) {

@@ -68,7 +68,8 @@ class MovieRepository @Inject constructor(
             }
 
             override suspend fun saveCallResult(data: ListTvResponse) {
-                localDataSource.insertTv(DataMapper.mapTvResponsesToEntities(data))
+                val tvList = DataMapper.mapTvResponsesToEntities(data)
+                localDataSource.insertTv(tvList)
             }
         }.asFlow()
     }
@@ -100,6 +101,7 @@ class MovieRepository @Inject constructor(
     }
 
 
+
     //fragment main
     override fun getPopularTv(): Flow<Resource<List<Movie>>> =
         object : NetworkBoundResource<List<Movie>, ListTvResponse>(){
@@ -112,7 +114,6 @@ class MovieRepository @Inject constructor(
             override fun shouldFetch(data: List<Movie>?): Boolean {
                 return data == null || data.isEmpty() || data.size <= 15
             }
-
 
             override suspend fun createCall(): Flow<ApiResponse<ListTvResponse>> =
                 remoteDataSource.getTv()
@@ -136,7 +137,6 @@ class MovieRepository @Inject constructor(
             }
         }.asFlow()
     }
-
 
 
     override fun getSearchMovie(query: String): Flow<Resource<List<Movie>>> {
@@ -208,6 +208,10 @@ class MovieRepository @Inject constructor(
             DataMapper.mapDomainToEntity(item),
             state
         )
+    }
+
+    override suspend fun removeFavoriteItem(item: Movie) {
+        localDataSource.removeItemFromPlaylist(DataMapper.mapDomainToEntity(item))
     }
 
 }
