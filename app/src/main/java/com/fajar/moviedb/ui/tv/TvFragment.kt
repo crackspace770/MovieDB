@@ -70,7 +70,7 @@ class TvFragment : Fragment(R.layout.fragment_tv) {
         binding.apply {
             progressBar.visibility = View.VISIBLE
             //  btnTryAgain.visibility = View.GONE
-            // viewError.visibility = View.GONE
+             viewError.root.visibility = View.GONE
             viewModel.getPopularTvList(SortUtils.POPULAR, shouldFetchAgain).observe(viewLifecycleOwner, movieObserver)
         }
     }

@@ -9,6 +9,8 @@
     <string name="text_primary">Sample of title text</string>
     <string name="text_subtitle">Sample of subtitle text</string>
 
+    <string name="github_page">https://github.com/crackspace770/MovieDB/tree/master</string>
+
     <string name="movie">Movie</string>
     <string name="tv_show">TV Show</string>
 
@@ -21,7 +23,7 @@
 
     <string name="name">Name</string>
     <string name="description">Description</string>
-    <string name="release">Released</string>
+    <string name="release">01–01–2011</string>
     <string name="genre">Genre</string>
     <string name="genre_info">Genre Info</string>
     <string name="rating">Rating</string>
@@ -41,6 +43,8 @@
     <string name="search_movie">Search Movie</string>
 
     <string name="title_activity_detail_home">DetailHomeActivity</string>
+    <string name="title_activity_main">MainActivity</string>
+
     <string name="no_data">Empty data</string>
     <string name="something_wrong">Oops something went wrong</string>
 
@@ -72,7 +76,7 @@
     <string name="search_your_favorite_movie">You can search your favorite movies or find similar results.</string>
 
     <string name="nothing_add">You Haven\'t add anything yet</string>
-    <string name="tap_love">Tap on love action button to add your favorite movie</string>
+    <string name="tap_love">Tap on love action button to add your favorite film</string>
 
     <string name="appbar_scrolling_view_behavior" translatable="false">com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior</string>
     <string name="poster">poster</string>

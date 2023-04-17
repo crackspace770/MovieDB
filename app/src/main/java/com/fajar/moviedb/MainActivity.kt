@@ -1,20 +1,16 @@
 package com.fajar.moviedb
 
-import android.annotation.SuppressLint
+
 import android.os.Bundle
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.fajar.moviedb.databinding.ActivityMainBinding
-import com.fajar.moviedb.ui.favorite.FavoriteFragment
 import com.fajar.moviedb.ui.home.HomeFragment
 import com.fajar.moviedb.ui.main.MainFragment
 import com.fajar.moviedb.ui.search.SearchFragment
@@ -40,7 +36,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
     }
 
     private fun setupBottomNavMenu(navController: NavController) {
-        setFragment(HomeFragment())
+        setFragment(MainFragment())
         val bottomNav = binding.navView
         bottomNav.setupWithNavController(navController)
         bottomNav.setOnItemSelectedListener {

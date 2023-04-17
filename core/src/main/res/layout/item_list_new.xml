@@ -46,7 +46,7 @@
             android:elevation="48dp"
             android:numStars="5"
             android:progressBackgroundTint="@color/white"
-            android:progressTint="@color/secondary_200"
+            android:progressTint="@color/colorBlue"
             android:rating="4"
             android:stepSize="0.5"
             app:layout_constraintStart_toEndOf="@+id/ivPoster"

@@ -68,7 +68,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         binding.apply {
             progressBar.visibility = View.VISIBLE
           //  btnTryAgain.visibility = View.GONE
-          // viewError.visibility = View.GONE
+            viewError.root.visibility = View.GONE
             homeViewModel.getPopularMoviesList(SortUtils.POPULAR, shouldFetchAgain).observe(viewLifecycleOwner, movieObserver)
         }
     }
@@ -108,11 +108,6 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             R.id.action_worst_vote -> sort = SortUtils.WORST
             R.id.action_random -> sort = SortUtils.RANDOM
 
-            R.id.action_settings ->{
-                val uri = Uri.parse("moviedb://setting")
-                startActivity(Intent(Intent.ACTION_VIEW, uri))
-                true
-            }
         }
 
         binding.apply {

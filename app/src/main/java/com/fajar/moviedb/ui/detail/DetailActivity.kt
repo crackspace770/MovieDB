@@ -1,5 +1,6 @@
 package com.fajar.moviedb.ui.detail
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
@@ -40,6 +41,8 @@ class DetailActivity: AppCompatActivity() {
         binding = ActivityDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         val film = intent.getParcelableExtra<Movie>(EXTRA_FILM)
         if (film != null){
             if (film.isTvShow) {
@@ -50,7 +53,21 @@ class DetailActivity: AppCompatActivity() {
             }
         }
 
+        binding.apply {
 
+            shareButton.setOnClickListener {
+                val shareIntent = Intent()
+                val appName = getString(R.string.app_name)
+                val githubLink = getString(R.string.github_page)
+                shareIntent.action = Intent.ACTION_SEND
+               shareIntent.putExtra(Intent.EXTRA_TEXT, "Watch $movieTitle on $appName \n" +
+                       "$githubLink ")
+
+                shareIntent.type = "text/plain"
+                startActivity(Intent.createChooser(shareIntent, "Share To:"))
+            }
+
+        }
 
     }
 
@@ -62,7 +79,7 @@ class DetailActivity: AppCompatActivity() {
                 showDetailMovie(it)
             }
              progressBar.visibility = View.VISIBLE
-            //  onFailMsg.visibility = View.GONE
+              viewError.root.visibility = View.GONE
             movie?.let { movieModel.setSelectedMovie(it) }
             movieModel.movieDetail.observe(this@DetailActivity) { movie ->
                 if (movie != null) {
@@ -78,7 +95,7 @@ class DetailActivity: AppCompatActivity() {
                         }
                         is Resource.Error -> {
                             progressBar.visibility = View.GONE
-                            //onFailMsg.visibility = View.VISIBLE
+                            viewError.root.visibility = View.VISIBLE
                         }
                     }
                 }
@@ -94,7 +111,7 @@ class DetailActivity: AppCompatActivity() {
                 showDetailMovie(it)
             }
             progressBar.visibility = View.VISIBLE
-           // onFailMsg.visibility = View.GONE
+            viewError.root.visibility = View.GONE
             tvShow?.let { tvModel.setSelectedTv(it) }
             tvModel.tvDetail.observe(this@DetailActivity) { tvShow ->
                 if (tvShow != null) {
@@ -110,7 +127,7 @@ class DetailActivity: AppCompatActivity() {
                         }
                         is Resource.Error -> {
                             progressBar.visibility = View.GONE
-                            //onFailMsg.visibility = View.VISIBLE
+                            viewError.root.visibility = View.VISIBLE
                         }
                     }
                 }
@@ -129,7 +146,7 @@ class DetailActivity: AppCompatActivity() {
                 tvRating.text= voteAverage.toString()
                 tvPopularity.text= popularity.toString()
                 ivDetailImage.loadImage("${IMAGE_BASE_URL}${backdropPath}")
-                ivPoster.loadImage("${IMAGE_BASE_URL}${posterPath}")
+               // ivPoster.loadImage("${IMAGE_BASE_URL}${posterPath}")
 
 
                 if (releaseDate == null || releaseDate == "") {
@@ -175,7 +192,7 @@ class DetailActivity: AppCompatActivity() {
         binding.apply {
             var statusFavorite = isFavorite
             setStatusFavorite(statusFavorite)
-            btnFavorite.setOnClickListener {
+            favoriteButton.setOnClickListener {
                 isFavorite = !isFavorite
                 if (isFavorite) {
                     if (movie.isTvShow)
@@ -202,9 +219,9 @@ class DetailActivity: AppCompatActivity() {
 
     private fun setStatusFavorite(statusFavorite: Boolean) {
         if (statusFavorite) {
-            binding.btnFavorite.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_unlove))
+            binding.favoriteButton.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_favorite_selected))
         } else {
-            binding.btnFavorite.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_love))
+            binding.favoriteButton.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_favorite_unselected))
         }
     }
 
