@@ -1,5 +1,6 @@
 package com.fajar.moviedb
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
@@ -11,6 +12,7 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import by.kirich1409.viewbindingdelegate.viewBinding
 import com.fajar.moviedb.databinding.ActivityMainBinding
 import com.fajar.moviedb.ui.favorite.FavoriteFragment
 import com.fajar.moviedb.ui.home.HomeFragment
@@ -20,42 +22,43 @@ import com.fajar.moviedb.ui.tv.TvFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 
-@AndroidEntryPoint
-class MainActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityMainBinding
+@AndroidEntryPoint
+class MainActivity : AppCompatActivity(R.layout.activity_main) {
+
+    private val binding: ActivityMainBinding by viewBinding()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
 
-        val navHostFragment = supportFragmentManager
-            .findFragmentById(R.id.main_fragment) as NavHostFragment
-        val navController = navHostFragment.navController
-        setupBottomNavMenu(navController)
+        binding.apply {
+            val navHostFragment =
+                supportFragmentManager.findFragmentById(R.id.main_fragment) as NavHostFragment
+            val navController = navHostFragment.navController
+            setupBottomNavMenu(navController)
+        }
     }
 
     private fun setupBottomNavMenu(navController: NavController) {
-        setFragment(MainFragment())
-        val navView: BottomNavigationView = binding.navView
-        navView.setupWithNavController(navController)
-        navView.setOnItemSelectedListener {
-            when (it.itemId){
+        setFragment(HomeFragment())
+        val bottomNav = binding.navView
+        bottomNav.setupWithNavController(navController)
+        bottomNav.setOnItemSelectedListener {
+            when (it.itemId) {
                 R.id.navigation_main -> setFragment(MainFragment())
                 R.id.navigation_home -> setFragment(HomeFragment())
-                R.id.navigation_tv -> setFragment(TvFragment())
-                R.id.navigation_search -> setFragment(SearchFragment())
-                R.id.navigation_favorite -> setFragment(FavoriteFragment())
-
+                R.id.navigation_tv-> setFragment(TvFragment())
+                R.id.navigation_search-> setFragment(SearchFragment())
+                R.id.navigation_favorite -> setFragment(supportFragmentManager.instantiate("com.fajar.moviedb.setting.FavoriteFragment"))
+                else -> setFragment(HomeFragment())
             }
             return@setOnItemSelectedListener true
         }
-
-
     }
 
-
+    private fun FragmentManager.instantiate(className: String): Fragment {
+        return fragmentFactory.instantiate(ClassLoader.getSystemClassLoader(), className)
+    }
 
     private fun setFragment(fragment: Fragment) {
         supportFragmentManager

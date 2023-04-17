@@ -1,4 +1,4 @@
 rootProject.name = "MovieDB"
 include ':app'
 include ':core'
-include ':setting'
+include ':favorite'

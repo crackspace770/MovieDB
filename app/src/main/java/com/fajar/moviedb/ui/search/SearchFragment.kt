@@ -42,7 +42,7 @@ class SearchFragment: Fragment() {
 
 
                 movieAdapter.onItemClick = { selectedData ->
-                    val moveToDetail = Intent(requireContext(), DetailActivity::class.java)
+                    val moveToDetail = Intent(activity, DetailActivity::class.java)
                     moveToDetail.putExtra(DetailActivity.EXTRA_FILM, selectedData)
                     startActivity(moveToDetail)
                 }

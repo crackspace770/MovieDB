@@ -2,7 +2,7 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-android'
-    id 'kotlin-android-extensions'
+    id 'kotlin-parcelize'
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
 }
@@ -38,14 +38,14 @@ android {
     buildFeatures {
         viewBinding true
     }
-    dynamicFeatures = [':setting']
+    dynamicFeatures = [':favorite']
 }
 
 dependencies {
 
     implementation project(":core")
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.7.21"
+   // implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.10"
     implementation 'androidx.navigation:navigation-fragment-ktx:2.5.3'
     implementation 'androidx.navigation:navigation-ui-ktx:2.5.3'
 }
