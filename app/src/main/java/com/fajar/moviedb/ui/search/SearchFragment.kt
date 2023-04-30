@@ -89,8 +89,8 @@ class SearchFragment: Fragment() {
                     if (query != null && query.isNotEmpty()) {
                         binding.apply {
                             progressBar.visibility = View.VISIBLE
-                         //   emptyData.visibility = View.GONE
-                         //   onFailMsg.visibility = View.GONE
+                            viewError.root.visibility = View.GONE
+                            viewEmpty.root.visibility = View.GONE
                             onInitialSearchStateMessage.visibility = View.GONE
                             rvResult.scrollToPosition(0)
                         }
@@ -122,14 +122,14 @@ class SearchFragment: Fragment() {
                                 rvResult.scrollToPosition(0)
                                 swipeToRefresh.isRefreshing = false
                                 if (searchResult.isEmpty()){
-                                   // onEmptyStateMessage.visibility = View.VISIBLE
+                                   viewEmpty.root.visibility = View.VISIBLE
                                     onInitialSearchStateMessage.visibility = View.GONE
                                 }
                             }
                         }
                         is Resource.Error -> {
                             progressBar.visibility = View.GONE
-                           // onFailMsg.visibility = View.VISIBLE
+                           viewError.root.visibility = View.VISIBLE
                         }
                     }
                 }
