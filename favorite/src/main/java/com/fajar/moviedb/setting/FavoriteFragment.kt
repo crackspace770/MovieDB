@@ -7,7 +7,7 @@ import androidx.fragment.app.Fragment
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.fajar.moviedb.R
 import com.fajar.moviedb.databinding.FragmentFavoritesBinding
-import com.fajar.moviedb.ui.favorite.SectionPagerAdapter
+
 import com.google.android.material.tabs.TabLayoutMediator
 
 class FavoriteFragment : Fragment(R.layout.fragment_favorites) {

@@ -9,5 +9,6 @@ import dagger.hilt.components.SingletonComponent
 @InstallIn(SingletonComponent::class)
 interface SettingModuleDependencies {
 
+    fun movieUseCase(): MovieUseCase
 
 }

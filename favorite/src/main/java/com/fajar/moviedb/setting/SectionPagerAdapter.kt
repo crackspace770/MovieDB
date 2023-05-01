@@ -2,8 +2,9 @@ package com.fajar.moviedb.setting
 
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.fajar.moviedb.ui.favorite.FavoriteMovieFragment
-import com.fajar.moviedb.ui.favorite.FavoriteTvFragment
+import com.fajar.moviedb.setting.movie.FavoriteMovieFragment
+import com.fajar.moviedb.setting.tv.FavoriteTvFragment
+
 
 class SectionPagerAdapter(fragment: Fragment): FragmentStateAdapter(fragment)  {
 
