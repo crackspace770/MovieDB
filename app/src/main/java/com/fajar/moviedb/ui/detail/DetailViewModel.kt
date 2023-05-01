@@ -11,17 +11,17 @@ import javax.inject.Inject
 @HiltViewModel
 class DetailViewModel @Inject constructor(private val movieUseCase: MovieUseCase): ViewModel() {
 
-    fun setFavoriteMovie(movie: Movie, newStatus:Boolean) =
-        movieUseCase.setFavoriteMovie(movie, newStatus)
 
-    fun setFavoriteTv(tv: Movie, newStatus: Boolean) =
-        movieUseCase.setFavoriteTv(tv, newStatus)
-
-    fun removeMovieFromPlaylist(item: Movie){
-        viewModelScope.launch { movieUseCase.removeFavoriteItem(item) }
+    fun setFavoriteMovie(item: Movie, newState: Boolean) {
+        viewModelScope.launch {
+            movieUseCase.insertFavoriteItem(item, newState)
+        }
     }
 
-    fun removeTvFromPlaylist(item:Movie){
-        viewModelScope.launch { movieUseCase.removeFavoriteItem(item) }
+    fun setFavoriteTv(item: Movie, newState: Boolean){
+        viewModelScope.launch {
+            movieUseCase.insertFavoriteItem(item, newState)
+        }
     }
+
 }

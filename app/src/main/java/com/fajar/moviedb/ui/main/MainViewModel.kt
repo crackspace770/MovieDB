@@ -24,8 +24,5 @@ class MainViewModel @Inject constructor(private val movieUseCase: MovieUseCase):
         return movieUseCase.getPopularTv().asLiveData()
     }
 
-    val popularTv = movieUseCase.getPopularTv().asLiveData()
-
-    val popularMovie= movieUseCase.getPopularMovie().asLiveData()
 
 }

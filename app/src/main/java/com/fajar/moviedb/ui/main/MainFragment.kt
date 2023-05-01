@@ -96,22 +96,21 @@ class MainFragment: Fragment() {
 
     private fun findTrendingShows() {
         binding.apply {
-       //     loadingUpcomingMovie.visibility = View.VISIBLE
-       //     onFailMsg.visibility = View.GONE
+
             viewModel.getTrendingThisWeekList()
                 .observe(viewLifecycleOwner) { movieList ->
                     if (movieList != null) {
                         when (movieList) {
                             is Resource.Loading -> {
-                 //               loadingTrending.visibility = View.VISIBLE
+                                progressBar.visibility = View.VISIBLE
                             }
                             is Resource.Success -> {
                                 movieList.data?.let { trendingAdapter.setData(it) }
-                    //            loadingTrending.visibility = View.GONE
+
                             }
                             is Resource.Error -> {
-                   //             loadingTrending.visibility = View.GONE
-                   //             onFailMsg.visibility = View.VISIBLE
+                                progressBar.visibility = View.GONE
+                                viewError.root.visibility = View.VISIBLE
                             }
                         }
                     }
@@ -121,24 +120,23 @@ class MainFragment: Fragment() {
 
    private fun findUpcomingMovies() {
         binding.apply {
-         //   progressBar.visibility = View.VISIBLE
-            //onFailMsg.visibility = View.GONE
+
             viewModel.getUpcomingMovies()
                 .observe(viewLifecycleOwner) { movieList ->
                     if (movieList != null) {
                         when (movieList) {
                             is Resource.Loading -> {
-       //                         progress_bar.visibility = View.VISIBLE
+                                progressBar.visibility = View.VISIBLE
                             }
                             is Resource.Success -> {
-                         //       loadingUpcomingMovie.visibility = View.GONE
+
                                 val sortedList =
                                    movieList.data?.sortedByDescending { it.releaseDate }
                                 sortedList?.let { movieAdapter.setData(it) }
                            }
                             is Resource.Error -> {
-  //                              progress_bar.visibility = View.GONE
-                                //onFailMsg.visibility = View.VISIBLE
+                                progressBar.visibility = View.GONE
+                                viewError.root.visibility = View.VISIBLE
                             }
                         }
                     }
@@ -148,25 +146,22 @@ class MainFragment: Fragment() {
 
     private fun findTopTvShows() {
         binding.apply {
-        //    progressBar.visibility = View.VISIBLE
-            //btnTryAgain.visibility = View.GONE
-           // onFailMsg.visibility = View.GONE
+
             viewModel.getTopTvShowList()
                 .observe(viewLifecycleOwner) { tvShowList ->
                         when (tvShowList) {
                             is Resource.Loading -> {
- //                               progress_bar.visibility = View.VISIBLE
+                                progressBar.visibility = View.VISIBLE
                             }
                             is Resource.Success -> {
- //                              progress_bar.visibility = View.GONE
+
                                val sortedList =
                                     tvShowList.data?.sortedByDescending { it.voteAverage }
                                 sortedList?.let { tvAdapter.setData(it) }
                             }
                             is Resource.Error -> {
-  //                              progress_bar.visibility = View.GONE
-                               // btnTryAgain.visibility = View.VISIBLE
-                               // onFailMsg.visibility = View.VISIBLE
+                                progressBar.visibility = View.GONE
+                                viewError.root.visibility = View.VISIBLE
                            }
                        }
                     }

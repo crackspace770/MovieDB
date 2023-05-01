@@ -6,13 +6,12 @@ import androidx.annotation.StringRes
 import androidx.fragment.app.Fragment
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.fajar.moviedb.R
-import com.fajar.moviedb.databinding.FragmentFavoritesBinding
-
+import com.fajar.moviedb.setting.databinding.FragmentFavoriteBinding
 import com.google.android.material.tabs.TabLayoutMediator
 
-class FavoriteFragment : Fragment(R.layout.fragment_favorites) {
+class FavoriteFragment : Fragment(com.fajar.moviedb.setting.R.layout.fragment_favorite) {
 
-    private val binding: FragmentFavoritesBinding by viewBinding()
+    private val binding: FragmentFavoriteBinding by viewBinding()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 

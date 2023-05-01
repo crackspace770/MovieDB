@@ -32,10 +32,7 @@ class MovieInteractor @Inject constructor (private val movieRepository: IMovieRe
     override fun setFavoriteTv(tv: Movie, state: Boolean) = movieRepository
         .setFavoriteTv(tv, state)
 
-    override suspend fun insertPlaylistItem(item: Movie, state: Boolean) =
-        movieRepository.insertPlaylistItem(item, state)
-
-    override suspend fun removeFavoriteItem(item: Movie) =
-        movieRepository.removeFavoriteItem(item)
+    override suspend fun insertFavoriteItem(item: Movie, state: Boolean) =
+        movieRepository.insertFavoriteItem(item, state)
 
 }

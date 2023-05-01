@@ -203,15 +203,13 @@ class MovieRepository @Inject constructor(
         appExecutors.diskIO().execute { localDataSource.setFavoriteMovie(movieEntity, state) }
     }
 
-    override suspend fun insertPlaylistItem(item: Movie, state: Boolean) {
-        localDataSource.insertPlaylistItem(
+    override suspend fun insertFavoriteItem(item: Movie, state: Boolean) {
+        localDataSource.insertFavoriteItem(
             DataMapper.mapDomainToEntity(item),
             state
         )
     }
 
-    override suspend fun removeFavoriteItem(item: Movie) {
-        localDataSource.removeItemFromPlaylist(DataMapper.mapDomainToEntity(item))
-    }
+
 
 }

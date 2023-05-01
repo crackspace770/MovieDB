@@ -21,10 +21,9 @@ interface MovieUseCase {
     fun getFavoriteMovie(): Flow<List<Movie>>
     fun getFavoriteTv():Flow<List<Movie>>
 
-    fun setFavoriteMovie(tourism: Movie, state: Boolean)
+    fun setFavoriteMovie(movie: Movie, state: Boolean)
     fun setFavoriteTv(tv:Movie, state: Boolean)
 
-    suspend fun insertPlaylistItem(item: Movie, state: Boolean)
-    suspend fun removeFavoriteItem(item: Movie)
+    suspend fun insertFavoriteItem(item: Movie, state: Boolean)
 
 }

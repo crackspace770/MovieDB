@@ -82,6 +82,7 @@
     <string name="poster">poster</string>
     <string name="poster_film">poster_film</string>
     <string name="title_favorites">Favorite</string>
+    <string name="date_released">01-01-2011</string>
 
 
 </resources>

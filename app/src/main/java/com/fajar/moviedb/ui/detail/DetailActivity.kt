@@ -196,8 +196,8 @@ class DetailActivity: AppCompatActivity() {
                 isFavorite = !isFavorite
                 if (isFavorite) {
                     if (movie.isTvShow)
-                        detailViewModel.setFavoriteTv(movie, isFavorite
-                        ) else detailViewModel.setFavoriteMovie(movie, isFavorite)
+                        detailViewModel.setFavoriteMovie(movie, isFavorite
+                        ) else detailViewModel.setFavoriteTv(movie, isFavorite)
                     statusFavorite = !statusFavorite
                     detailViewModel.setFavoriteMovie(movie, statusFavorite)
                     detailViewModel.setFavoriteTv(movie, statusFavorite)

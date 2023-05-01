@@ -61,7 +61,7 @@
         android:id="@+id/detailActivity"
         android:name="com.fajar.moviedb.ui.detail.DetailActivity"
         android:label="@string/title_activity_detail_home"
-        tools:layout="@layout/activity_detail"
+        tools:layout="@layout/activity_details"
         />
 
 
