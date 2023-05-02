@@ -8,7 +8,6 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
 import com.fajar.moviedb.R
 import com.fajar.moviedb.core.data.Resource
 import com.fajar.moviedb.core.domain.model.Movie
@@ -211,7 +210,6 @@ class DetailActivity: AppCompatActivity() {
     private fun ImageView.loadImage(url: String?) {
         Glide.with(this.context)
             .load(url)
-            .apply(RequestOptions.placeholderOf(R.drawable.ic_refresh))
             .error(R.drawable.ic_error_image)
             .into(this)
     }

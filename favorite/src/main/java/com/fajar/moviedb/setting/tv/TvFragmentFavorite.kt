@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import by.kirich1409.viewbindingdelegate.viewBinding
-import com.fajar.moviedb.R
 import com.fajar.moviedb.core.ui.MovieAdapter
 import com.fajar.moviedb.di.FavoriteModuleDependencies
 import com.fajar.moviedb.setting.DaggerFavoriteComponent
