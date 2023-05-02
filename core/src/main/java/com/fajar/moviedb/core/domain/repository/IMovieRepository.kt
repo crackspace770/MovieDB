@@ -9,9 +9,7 @@ interface IMovieRepository {
 
     fun getTrendingMovie(sort: String, shouldFetchAgain: Boolean): Flow<Resource<List<Movie>>>
     fun getTrendingTv(sort: String, shouldFetchAgain: Boolean): Flow<Resource<List<Movie>>>
-
     fun getTrendingThisWeekList(): Flow<Resource<List<Movie>>>
-
 
     fun getPopularMovie(): Flow<Resource<List<Movie>>>
     fun getPopularTv():Flow<Resource<List<Movie>>>
@@ -23,9 +21,6 @@ interface IMovieRepository {
 
     fun getFavoriteMovie(): Flow<List<Movie>>
     fun getFavoriteTv(): Flow<List<Movie>>
-
-    fun setFavoriteMovie(movie: Movie, state: Boolean)
-    fun setFavoriteTv(tv:Movie, state: Boolean)
 
     suspend fun insertFavoriteItem(item: Movie, state: Boolean)
 

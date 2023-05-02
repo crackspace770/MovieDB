@@ -42,8 +42,8 @@ class MovieRepository @Inject constructor(
                 remoteDataSource.getPopularMovie()
 
             override suspend fun saveCallResult(data: ListMovieResponse) {
-                val movieList = DataMapper.mapResponsesToEntities(data)
-                localDataSource.insertMovie(movieList)
+                val movie = DataMapper.mapResponsesToEntities(data)
+                localDataSource.insertMovie(movie)
             }
         }.asFlow()
     }
@@ -68,8 +68,8 @@ class MovieRepository @Inject constructor(
             }
 
             override suspend fun saveCallResult(data: ListTvResponse) {
-                val tvList = DataMapper.mapTvResponsesToEntities(data)
-                localDataSource.insertTv(tvList)
+                val tv = DataMapper.mapTvResponsesToEntities(data)
+                localDataSource.insertTv(tv)
             }
         }.asFlow()
     }
@@ -94,8 +94,8 @@ class MovieRepository @Inject constructor(
                 remoteDataSource.getMovie()
 
             override suspend fun saveCallResult(data: ListMovieResponse) {
-                val movieList = DataMapper.mapResponsesToEntities(data)
-                localDataSource.insertMovie(movieList)
+                val movie = DataMapper.mapResponsesToEntities(data)
+                localDataSource.insertMovie(movie)
             }
         }.asFlow()
     }
@@ -119,12 +119,13 @@ class MovieRepository @Inject constructor(
                 remoteDataSource.getTv()
 
             override suspend fun saveCallResult(data: ListTvResponse) {
-                val movieList = DataMapper.mapTvToEntities(data)
-                localDataSource.insertTv(movieList)
+                val movie = DataMapper.mapTvToEntities(data)
+                localDataSource.insertTv(movie)
             }
         }.asFlow()
 
 
+    //fragment main
     override fun getTrendingThisWeekList(): Flow<Resource<List<Movie>>> {
         return object :
             NetworkOnlyResource<List<Movie>, MultiResponse>() {
@@ -139,6 +140,7 @@ class MovieRepository @Inject constructor(
     }
 
 
+    //fragment search
     override fun getSearchMovie(query: String): Flow<Resource<List<Movie>>> {
         return object :
             NetworkOnlyResource<List<Movie>, MultiResponse>() {
@@ -153,6 +155,7 @@ class MovieRepository @Inject constructor(
         }.asFlow()
     }
 
+    //activity detail(movie)
     override fun getMovieDetail(movie: Movie): Flow<Resource<Movie>> {
         return object : NetworkOnlyResource<Movie, MovieDetailResponse>() {
             override suspend fun createCall(): Flow<ApiResponse<MovieDetailResponse>> {
@@ -166,7 +169,7 @@ class MovieRepository @Inject constructor(
     }
 
 
-
+    //activity detail(tv)
     override fun getTvDetail(tv: Movie): Flow<Resource<Movie>> {
         return object : NetworkOnlyResource<Movie, TvDetailResponse>() {
             override suspend fun createCall(): Flow<ApiResponse<TvDetailResponse>> {
@@ -192,16 +195,6 @@ class MovieRepository @Inject constructor(
         }
     }
 
-
-    override fun setFavoriteMovie(movie: Movie, state: Boolean) {
-        val movieEntity = DataMapper.mapDomainToEntity(movie)
-        appExecutors.diskIO().execute { localDataSource.setFavoriteMovie(movieEntity, state) }
-    }
-
-    override fun setFavoriteTv(tv: Movie, state: Boolean) {
-        val movieEntity = DataMapper.mapDomainToEntity(tv)
-        appExecutors.diskIO().execute { localDataSource.setFavoriteMovie(movieEntity, state) }
-    }
 
     override suspend fun insertFavoriteItem(item: Movie, state: Boolean) {
         localDataSource.insertFavoriteItem(

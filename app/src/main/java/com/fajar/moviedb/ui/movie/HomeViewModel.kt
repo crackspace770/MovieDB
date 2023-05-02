@@ -1,11 +1,10 @@
-package com.fajar.moviedb.ui.home
+package com.fajar.moviedb.ui.movie
 
 
 import androidx.lifecycle.*
 import com.fajar.moviedb.core.data.Resource
 import com.fajar.moviedb.core.domain.model.Movie
 import com.fajar.moviedb.core.domain.usecase.MovieUseCase
-import com.fajar.moviedb.core.utils.SortUtils
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 

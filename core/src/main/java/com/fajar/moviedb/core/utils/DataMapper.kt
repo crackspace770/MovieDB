@@ -8,6 +8,8 @@ import com.fajar.moviedb.core.domain.model.Movie
 
 object DataMapper {
 
+
+    //  Movie Response To Entity
     fun mapResponsesToEntities(input: ListMovieResponse): List<MovieEntity> {
         val movieList = ArrayList<MovieEntity>()
         input.results.forEach {
@@ -30,9 +32,8 @@ object DataMapper {
         return movieList
     }
 
-    /*
-      TV Response To Entity
-    */
+
+    //  TV Response To Entity
     fun mapTvResponsesToEntities(data: ListTvResponse): List<MovieEntity> {
         val tvShowList = ArrayList<MovieEntity>()
         data.results.forEach {
@@ -76,7 +77,6 @@ object DataMapper {
         }
         return movieList
     }
-
 
 
     fun mapDetailMovieResponseToDomain(data: MovieDetailResponse): Movie {

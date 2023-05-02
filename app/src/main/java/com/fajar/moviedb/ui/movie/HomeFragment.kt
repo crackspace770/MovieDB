@@ -1,15 +1,12 @@
-package com.fajar.moviedb.ui.home
+package com.fajar.moviedb.ui.movie
 
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.view.*
-import androidx.appcompat.widget.PopupMenu
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
-import by.kirich1409.viewbindingdelegate.viewBinding
 import com.fajar.moviedb.R
 import com.fajar.moviedb.core.data.Resource
 import com.fajar.moviedb.core.domain.model.Movie
@@ -20,7 +17,7 @@ import com.fajar.moviedb.ui.detail.DetailActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class HomeFragment : Fragment(R.layout.fragment_home) {
+class HomeFragment : Fragment(R.layout.fragment_movie) {
 
     private val homeViewModel: HomeViewModel by viewModels()
     private var movieAdapter = MovieAdapter()

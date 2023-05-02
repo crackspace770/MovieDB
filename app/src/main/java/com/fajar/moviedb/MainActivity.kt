@@ -11,7 +11,7 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.fajar.moviedb.databinding.ActivityMainBinding
-import com.fajar.moviedb.ui.home.HomeFragment
+import com.fajar.moviedb.ui.movie.HomeFragment
 import com.fajar.moviedb.ui.main.MainFragment
 import com.fajar.moviedb.ui.search.SearchFragment
 import com.fajar.moviedb.ui.tv.TvFragment

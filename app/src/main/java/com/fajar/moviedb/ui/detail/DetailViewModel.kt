@@ -11,7 +11,6 @@ import javax.inject.Inject
 @HiltViewModel
 class DetailViewModel @Inject constructor(private val movieUseCase: MovieUseCase): ViewModel() {
 
-
     fun setFavoriteMovie(item: Movie, newState: Boolean) {
         viewModelScope.launch {
             movieUseCase.insertFavoriteItem(item, newState)

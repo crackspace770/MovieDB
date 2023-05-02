@@ -57,8 +57,6 @@ dependencies {
     // ViewBindingPropertyDelegate
     implementation 'com.github.kirich1409:viewbindingpropertydelegate:1.5.3'
 
-    // Shimmer
-    implementation "com.facebook.shimmer:shimmer:$shimmerVersion"
 
 
 }
