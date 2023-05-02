@@ -17,7 +17,7 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.fajar.moviedb.ui.movie.HomeFragment"
+        android:name="com.fajar.moviedb.ui.movie.MovieFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_movie" >
         <action

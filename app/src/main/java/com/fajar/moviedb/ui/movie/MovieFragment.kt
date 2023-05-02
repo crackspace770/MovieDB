@@ -17,9 +17,9 @@ import com.fajar.moviedb.ui.detail.DetailActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class HomeFragment : Fragment(R.layout.fragment_movie) {
+class MovieFragment : Fragment(R.layout.fragment_movie) {
 
-    private val homeViewModel: HomeViewModel by viewModels()
+    private val movieViewModel: MovieViewModel by viewModels()
     private var movieAdapter = MovieAdapter()
     private var _binding: FragmentMovieBinding? = null
     private val binding get() = _binding!!
@@ -64,9 +64,8 @@ class HomeFragment : Fragment(R.layout.fragment_movie) {
     private fun findMovieList(shouldFetchAgain: Boolean){
         binding.apply {
             progressBar.visibility = View.VISIBLE
-          //  btnTryAgain.visibility = View.GONE
             viewError.root.visibility = View.GONE
-            homeViewModel.getPopularMoviesList(SortUtils.POPULAR, shouldFetchAgain).observe(viewLifecycleOwner, movieObserver)
+            movieViewModel.getPopularMoviesList(SortUtils.POPULAR, shouldFetchAgain).observe(viewLifecycleOwner, movieObserver)
         }
     }
 
@@ -108,7 +107,7 @@ class HomeFragment : Fragment(R.layout.fragment_movie) {
         }
 
         binding.apply {
-            homeViewModel.getPopularMoviesList(sort, false).observe(viewLifecycleOwner, movieObserver)
+            movieViewModel.getPopularMoviesList(sort, false).observe(viewLifecycleOwner, movieObserver)
         }
         item.isChecked = true
         return super.onOptionsItemSelected(item)

@@ -14,7 +14,7 @@ class SplashActivity: AppCompatActivity() {
     private var mDelayHandler: Handler? = null
     private var durasi: Long=2500 //2.5 detik
 
-    internal val mRunnable: Runnable = Runnable {
+    private val mRunnable: Runnable = Runnable {
         val intent = Intent(applicationContext, MainActivity::class.java)
         startActivity(intent)
         finish()

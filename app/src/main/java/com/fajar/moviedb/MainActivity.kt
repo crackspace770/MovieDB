@@ -11,7 +11,7 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.fajar.moviedb.databinding.ActivityMainBinding
-import com.fajar.moviedb.ui.movie.HomeFragment
+import com.fajar.moviedb.ui.movie.MovieFragment
 import com.fajar.moviedb.ui.main.MainFragment
 import com.fajar.moviedb.ui.search.SearchFragment
 import com.fajar.moviedb.ui.tv.TvFragment
@@ -42,11 +42,11 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         bottomNav.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.navigation_main -> setFragment(MainFragment())
-                R.id.navigation_home -> setFragment(HomeFragment())
+                R.id.navigation_home -> setFragment(MovieFragment())
                 R.id.navigation_tv-> setFragment(TvFragment())
                 R.id.navigation_search-> setFragment(SearchFragment())
                 R.id.navigation_favorite -> setFragment(supportFragmentManager.instantiate("com.fajar.moviedb.setting.FavoriteFragment"))
-                else -> setFragment(HomeFragment())
+                else -> setFragment(MovieFragment())
             }
             return@setOnItemSelectedListener true
         }

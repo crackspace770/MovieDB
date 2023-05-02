@@ -5,9 +5,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
-import com.fajar.moviedb.core.R
-import com.fajar.moviedb.core.databinding.ItemListBinding
 import com.fajar.moviedb.core.databinding.ItemTrendingBinding
 import com.fajar.moviedb.core.domain.model.Movie
 import com.fajar.moviedb.core.utils.Constant.Companion.IMAGE_BASE_URL

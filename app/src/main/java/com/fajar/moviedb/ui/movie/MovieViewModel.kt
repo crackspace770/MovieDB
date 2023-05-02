@@ -9,7 +9,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class HomeViewModel @Inject constructor(private val movieUseCase: MovieUseCase) : ViewModel() {
+class MovieViewModel @Inject constructor(private val movieUseCase: MovieUseCase) : ViewModel() {
 
     private val selectedMovie = MutableLiveData<Movie>()
 

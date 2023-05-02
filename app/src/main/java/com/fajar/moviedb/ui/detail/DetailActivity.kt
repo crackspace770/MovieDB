@@ -14,7 +14,7 @@ import com.fajar.moviedb.core.data.Resource
 import com.fajar.moviedb.core.domain.model.Movie
 import com.fajar.moviedb.core.utils.Constant.Companion.IMAGE_BASE_URL
 import com.fajar.moviedb.databinding.ActivityDetailsBinding
-import com.fajar.moviedb.ui.movie.HomeViewModel
+import com.fajar.moviedb.ui.movie.MovieViewModel
 import com.fajar.moviedb.ui.tv.TvViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import java.text.SimpleDateFormat
@@ -32,7 +32,7 @@ class DetailActivity: AppCompatActivity() {
     private var isFavorite: Boolean = false
     private lateinit var movieTitle: String
     private val tvModel: TvViewModel by viewModels()
-    private val movieModel: HomeViewModel by viewModels()
+    private val movieModel: MovieViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         //(application as MyApplication).appComponent.inject(this)

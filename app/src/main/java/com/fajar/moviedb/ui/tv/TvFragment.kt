@@ -69,7 +69,6 @@ class TvFragment : Fragment(R.layout.fragment_tv) {
     private fun findMovieList(shouldFetchAgain: Boolean){
         binding.apply {
             progressBar.visibility = View.VISIBLE
-            //  btnTryAgain.visibility = View.GONE
              viewError.root.visibility = View.GONE
             viewModel.getPopularTvList(SortUtils.POPULAR, shouldFetchAgain).observe(viewLifecycleOwner, movieObserver)
         }

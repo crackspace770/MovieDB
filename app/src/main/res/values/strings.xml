@@ -14,9 +14,6 @@
     <string name="movie">Movie</string>
     <string name="tv_show">TV Show</string>
 
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-
     <string name="menu_home">Home</string>
     <string name="menu_favorite">Favorite</string>
 
@@ -58,16 +55,7 @@
     <string name="home">Home</string>
     <string name="trending_this_week">Trending this Week</string>
     <string name="search">Search</string>
-    <string name="no_data_match">Sorry, no matching data</string>
-    <string name="you_are_offline">You are offline. Please check your connection</string>
-
     <string name="try_again">Try Again</string>
-
-    <string name="star_symbol">star symbol</string>
-    <string name="title_setting">Module Title</string>
-
-    <string name="action_settings">Settings</string>
-
     <string name="action_filter">filter</string>
 
     <string name="search_empty_result_illustration">Search Empty Result Illustration</string>
@@ -77,11 +65,11 @@
     <string name="nothing_add">You Haven\'t add anything yet</string>
     <string name="tap_love">Tap on love action button to add your favorite film</string>
 
-    <string name="appbar_scrolling_view_behavior" translatable="false">com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior</string>
+
     <string name="poster">poster</string>
     <string name="poster_film">poster_film</string>
     <string name="title_favorites">Favorite</string>
-    <string name="date_released">01-01-2011</string>
+    <string name="date_released">01–01-2011</string>
 
 
 </resources>
