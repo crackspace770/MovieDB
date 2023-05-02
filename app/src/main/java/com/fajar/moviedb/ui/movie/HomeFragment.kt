@@ -12,7 +12,7 @@ import com.fajar.moviedb.core.data.Resource
 import com.fajar.moviedb.core.domain.model.Movie
 import com.fajar.moviedb.core.ui.MovieAdapter
 import com.fajar.moviedb.core.utils.SortUtils
-import com.fajar.moviedb.databinding.FragmentHomeBinding
+import com.fajar.moviedb.databinding.FragmentMovieBinding
 import com.fajar.moviedb.ui.detail.DetailActivity
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -21,14 +21,14 @@ class HomeFragment : Fragment(R.layout.fragment_movie) {
 
     private val homeViewModel: HomeViewModel by viewModels()
     private var movieAdapter = MovieAdapter()
-    private var _binding: FragmentHomeBinding? = null
+    private var _binding: FragmentMovieBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        _binding = FragmentMovieBinding.inflate(inflater, container, false)
         return binding.root
     }
 
