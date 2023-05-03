@@ -56,7 +56,7 @@ class FavoriteTvFragment: Fragment(com.fajar.moviedb.setting.R.layout.fragment_t
 
             favoriteViewModel.getFavoriteTv().observe(viewLifecycleOwner) { dataTourism ->
                 tvAdapter.setData(dataTourism)
-                //binding.viewEmptyFavorite.root.visibility =
+                binding.viewEmptyFavorite.root.visibility =
                     if (dataTourism.isNotEmpty()) View.GONE else View.VISIBLE
             }
 
