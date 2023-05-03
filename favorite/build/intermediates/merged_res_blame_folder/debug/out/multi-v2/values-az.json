@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.fajar.moviedb.setting.favorite-mergeDebugResources-5:/values-az/values-az.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\fajar\\.gradle\\caches\\transforms-3\\9b8056acac252b00368eb43ad82c4c40\\transformed\\preference-1.2.0\\res\\values-az\\values-az.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "105,179,263,342,474,643,727",
+                        "endColumns": "73,83,78,131,168,83,78",
+                        "endOffsets": "174,258,337,469,638,722,801"
+                    }
+                }
+            ]
+        }
+    ]
+}

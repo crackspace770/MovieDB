@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="http://schemas.android.com/tools">
+    <color name="black">#FF000000</color>
+    <color name="blue">#386BE0</color>
+    <color name="colorAccent">#f9826c</color>
+    <color name="colorBlack">#333333</color>
+    <color name="colorBlue">#0366d6</color>
+    <color name="colorGrey">#586069</color>
+    <color name="colorSubtitle">#757575</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="dark_400">#17212b</color>
+    <color name="gray">#607D8B</color>
+    <color name="gray_dark">#455A64</color>
+    <color name="gray_light">#B0BEC5</color>
+    <color name="ic_launcher_background">#3D8DDC</color>
+    <color name="light_200">#bfc8d2</color>
+    <color name="orange">#FF5722</color>
+    <color name="orange_dark">#E64A19</color>
+    <color name="orange_light">#FFAB91</color>
+    <color name="placeholder">#2A323C</color>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="white">#FFFFFFFF</color>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="app_bar_height">360dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="nav_header_height">140dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+    <string name="action_filter">filter</string>
+    <string name="app_name">The Movie DB</string>
+    <string name="best_vote">Best Vote</string>
+    <string name="category">Category: %s</string>
+    <string name="date_released">01–01-2011</string>
+    <string name="description">Description</string>
+    <string name="episodeRuntime">%dmin</string>
+    <string name="genre">Genre</string>
+    <string name="genre_info">Genre Info</string>
+    <string name="github_page">https://github.com/crackspace770/MovieDB/tree/master</string>
+    <string name="home">Home</string>
+    <string name="image_description">Image</string>
+    <string name="image_placeholder">Image</string>
+    <string name="info">Info</string>
+    <string name="latest_release">Latest Release</string>
+    <string name="menu_favorite">Favorite</string>
+    <string name="menu_home">Home</string>
+    <string name="movie">Movie</string>
+    <string name="movie_are_you_looking">What movie are you looking for?</string>
+    <string name="name">Name</string>
+    <string name="no_data">Empty data</string>
+    <string name="no_genre_data">-No Genre Data-</string>
+    <string name="nothing_add">You Haven\'t add anything yet</string>
+    <string name="oldest_release">Oldest Release</string>
+    <string name="popular">Popular</string>
+    <string name="popularity">Popularity</string>
+    <string name="popularity_info">Popularity Info</string>
+    <string name="poster">poster</string>
+    <string name="poster_film">poster_film</string>
+    <string name="random">Random</string>
+    <string name="rating">Rating</string>
+    <string name="rating_info">Rating Info</string>
+    <string name="release">01–01–2011</string>
+    <string name="runtime">Runtime</string>
+    <string name="runtime_info">Runtime Info</string>
+    <string name="search">Search</string>
+    <string name="search_empty_result_illustration">Search Empty Result Illustration</string>
+    <string name="search_movie">Search Movie</string>
+    <string name="search_your_favorite_movie">You can search your favorite movies or find similar results.</string>
+    <string name="something_wrong">Oops something went wrong</string>
+    <string name="tap_love">Tap on love action button to add your favorite film</string>
+    <string name="text_primary">Sample of title text</string>
+    <string name="text_subtitle">Sample of subtitle text</string>
+    <string name="title_activity_detail_home">DetailHomeActivity</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_favorite">Favorites</string>
+    <string name="title_favorites">Favorite</string>
+    <string name="title_home">Movie</string>
+    <string name="title_search">Search</string>
+    <string name="title_trend">Trending Now</string>
+    <string name="title_tv">TV Series</string>
+    <string name="trending_this_week">Trending this Week</string>
+    <string name="try_again">Try Again</string>
+    <string name="tv_show">TV Show</string>
+    <string name="upcoming_movies">Upcoming Movies</string>
+    <string name="vote">Vote</string>
+    <string name="vote_info">Vote Info</string>
+    <string name="worst_vote">Worst Vote</string>
+    <style name="ButtonGeneral">
+        <item name="android:backgroundTint">@color/orange</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginRight">16dp</item>
+        <item name="android:layout_marginLeft">16dp</item>
+        <item name="android:layout_marginBottom">16dp</item>
+    </style>
+    <style name="TextContent">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">16dp</item>
+        <item name="android:layout_marginRight">16dp</item>
+    </style>
+    <style name="TextContent.Small">
+        <item name="android:textAppearance">@style/TextAppearance.MaterialComponents.Subtitle1
+        </item>
+    </style>
+    <style name="TextContent.Small.White">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+    <style name="TextContent.Subtitle">
+        <item name="android:textColor">@color/colorSubtitle</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+    <style name="TextSpec">
+        <item name="android:textSize">14sp</item>
+    </style>
+    <style name="TextSpec.Field">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginRight">16dp</item>
+        <item name="android:textColor">@color/colorSubtitle</item>
+    </style>
+    <style name="TextSpec.Value">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+    <style name="Theme.MovieDB" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        
+        <item name="colorPrimary">@color/blue</item>
+        <item name="colorPrimaryVariant">@color/black</item>
+        <item name="colorOnPrimary">@color/white</item>
+        
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        
+        <item name="android:statusBarColor" ns1:targetApi="l">?attr/colorPrimaryVariant</item>
+        
+    </style>
+    <style name="custom_card_view" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopLeft">48dp</item>
+        <item name="cornerSizeTopRight">48dp</item>
+        <item name="cornerSizeBottomLeft">48dp</item>
+        <item name="cornerSizeBottomRight">48dp</item>
+
+    </style>
+    <style name="custom_card_view_style" parent="Widget.MaterialComponents.CardView">
+
+        <item name="shapeAppearanceOverlay">@style/custom_card_view</item>
+
+    </style>
+</resources>

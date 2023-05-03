@@ -1,0 +1,59 @@
+-- Merging decision tree log ---
+manifest
+ADDED from D:\Android\MovieDB2\favorite\src\main\AndroidManifest.xml:2:1-16:12
+INJECTED from D:\Android\MovieDB2\favorite\src\main\AndroidManifest.xml:2:1-16:12
+INJECTED from D:\Android\MovieDB2\favorite\src\main\AndroidManifest.xml:2:1-16:12
+INJECTED from D:\Android\MovieDB2\favorite\src\main\AndroidManifest.xml:2:1-16:12
+MERGED from [androidx.preference:preference-ktx:1.2.0] C:\Users\fajar\.gradle\caches\transforms-3\8e0511ab06d00c2976f2f478682029e1\transformed\preference-ktx-1.2.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.preference:preference:1.2.0] C:\Users\fajar\.gradle\caches\transforms-3\9b8056acac252b00368eb43ad82c4c40\transformed\preference-1.2.0\AndroidManifest.xml:17:1-24:12
+INJECTED from D:\Android\MovieDB2\favorite\src\main\AndroidManifest.xml:2:1-16:12
+INJECTED from D:\Android\MovieDB2\favorite\src\main\AndroidManifest.xml:2:1-16:12
+INJECTED from D:\Android\MovieDB2\favorite\src\main\AndroidManifest.xml:2:1-16:12
+	package
+		ADDED from D:\Android\MovieDB2\favorite\src\main\AndroidManifest.xml:4:5-40
+		INJECTED from D:\Android\MovieDB2\favorite\src\main\AndroidManifest.xml
+		INJECTED from D:\Android\MovieDB2\favorite\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from D:\Android\MovieDB2\favorite\src\main\AndroidManifest.xml
+		ADDED from D:\Android\MovieDB2\favorite\src\main\AndroidManifest.xml:2:1-16:12
+		INJECTED from D:\Android\MovieDB2\favorite\src\main\AndroidManifest.xml
+	xmlns:dist
+		ADDED from D:\Android\MovieDB2\favorite\src\main\AndroidManifest.xml:3:5-61
+	android:versionCode
+		INJECTED from D:\Android\MovieDB2\favorite\src\main\AndroidManifest.xml
+		ADDED from D:\Android\MovieDB2\favorite\src\main\AndroidManifest.xml:2:1-16:12
+		INJECTED from D:\Android\MovieDB2\favorite\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from D:\Android\MovieDB2\favorite\src\main\AndroidManifest.xml:2:11-69
+dist:module
+ADDED from D:\Android\MovieDB2\favorite\src\main\AndroidManifest.xml:6:5-13:19
+	dist:instant
+		ADDED from D:\Android\MovieDB2\favorite\src\main\AndroidManifest.xml:7:9-29
+	dist:title
+		ADDED from D:\Android\MovieDB2\favorite\src\main\AndroidManifest.xml:8:9-43
+dist:delivery
+ADDED from D:\Android\MovieDB2\favorite\src\main\AndroidManifest.xml:9:9-11:25
+dist:install-time
+ADDED from D:\Android\MovieDB2\favorite\src\main\AndroidManifest.xml:10:13-34
+dist:fusing
+ADDED from D:\Android\MovieDB2\favorite\src\main\AndroidManifest.xml:12:9-44
+	dist:include
+		ADDED from D:\Android\MovieDB2\favorite\src\main\AndroidManifest.xml:12:22-41
+uses-sdk
+INJECTED from D:\Android\MovieDB2\favorite\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from D:\Android\MovieDB2\favorite\src\main\AndroidManifest.xml
+INJECTED from D:\Android\MovieDB2\favorite\src\main\AndroidManifest.xml
+MERGED from [androidx.preference:preference-ktx:1.2.0] C:\Users\fajar\.gradle\caches\transforms-3\8e0511ab06d00c2976f2f478682029e1\transformed\preference-ktx-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.preference:preference-ktx:1.2.0] C:\Users\fajar\.gradle\caches\transforms-3\8e0511ab06d00c2976f2f478682029e1\transformed\preference-ktx-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.preference:preference:1.2.0] C:\Users\fajar\.gradle\caches\transforms-3\9b8056acac252b00368eb43ad82c4c40\transformed\preference-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.preference:preference:1.2.0] C:\Users\fajar\.gradle\caches\transforms-3\9b8056acac252b00368eb43ad82c4c40\transformed\preference-1.2.0\AndroidManifest.xml:20:5-22:41
+INJECTED from D:\Android\MovieDB2\favorite\src\main\AndroidManifest.xml
+INJECTED from D:\Android\MovieDB2\favorite\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from D:\Android\MovieDB2\favorite\src\main\AndroidManifest.xml
+		ADDED from D:\Android\MovieDB2\favorite\src\main\AndroidManifest.xml
+		INJECTED from D:\Android\MovieDB2\favorite\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from D:\Android\MovieDB2\favorite\src\main\AndroidManifest.xml
+		ADDED from D:\Android\MovieDB2\favorite\src\main\AndroidManifest.xml
+		INJECTED from D:\Android\MovieDB2\favorite\src\main\AndroidManifest.xml

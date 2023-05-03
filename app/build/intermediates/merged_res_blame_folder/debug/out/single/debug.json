@@ -1,0 +1,262 @@
+[
+    {
+        "merged": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-merged_res-54:\\drawable_movie_poster.jpg.flat",
+        "source": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-main-56:\\drawable\\movie_poster.jpg"
+    },
+    {
+        "merged": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-merged_res-54:\\drawable_tv_icon.png.flat",
+        "source": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-main-56:\\drawable\\tv_icon.png"
+    },
+    {
+        "merged": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-merged_res-54:\\drawable_moviedb_icon.png.flat",
+        "source": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-main-56:\\drawable\\moviedb_icon.png"
+    },
+    {
+        "merged": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-merged_res-54:\\drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-pngs-49:\\drawable-anydpi-v24\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-merged_res-54:\\drawable_movie_icon.png.flat",
+        "source": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-main-56:\\drawable\\movie_icon.png"
+    },
+    {
+        "merged": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-merged_res-54:\\drawable-hdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-pngs-49:\\drawable-hdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-merged_res-54:\\mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-main-56:\\mipmap-mdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-merged_res-54:\\drawable_ic_favorite_unselected.xml.flat",
+        "source": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-main-56:\\drawable\\ic_favorite_unselected.xml"
+    },
+    {
+        "merged": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-merged_res-54:\\drawable-v24_ic_filter_list.xml.flat",
+        "source": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-main-56:\\drawable-v24\\ic_filter_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-merged_res-54:\\mipmap-mdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-main-56:\\mipmap-mdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-merged_res-54:\\navigation_mobile_navigation.xml.flat",
+        "source": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-main-56:\\navigation\\mobile_navigation.xml"
+    },
+    {
+        "merged": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-merged_res-54:\\drawable_broken_image.png.flat",
+        "source": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-main-56:\\drawable\\broken_image.png"
+    },
+    {
+        "merged": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-merged_res-54:\\drawable_ic_home.png.flat",
+        "source": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-main-56:\\drawable\\ic_home.png"
+    },
+    {
+        "merged": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-merged_res-54:\\layout_content_main.xml.flat",
+        "source": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-main-56:\\layout\\content_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-merged_res-54:\\mipmap-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-main-56:\\mipmap-xhdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-merged_res-54:\\layout_activity_splash.xml.flat",
+        "source": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-main-56:\\layout\\activity_splash.xml"
+    },
+    {
+        "merged": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-merged_res-54:\\drawable-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-pngs-49:\\drawable-xhdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-merged_res-54:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-main-56:\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-merged_res-54:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-main-56:\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-merged_res-54:\\layout_view_empty.xml.flat",
+        "source": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-main-56:\\layout\\view_empty.xml"
+    },
+    {
+        "merged": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-merged_res-54:\\drawable-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-pngs-49:\\drawable-xxhdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-merged_res-54:\\drawable_ic_baseline_home_white.xml.flat",
+        "source": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-main-56:\\drawable\\ic_baseline_home_white.xml"
+    },
+    {
+        "merged": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-merged_res-54:\\layout_fragment_search.xml.flat",
+        "source": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-main-56:\\layout\\fragment_search.xml"
+    },
+    {
+        "merged": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-merged_res-54:\\layout_fragment_main.xml.flat",
+        "source": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-main-56:\\layout\\fragment_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-merged_res-54:\\menu_sorting_data_menu.xml.flat",
+        "source": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-main-56:\\menu\\sorting_data_menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-merged_res-54:\\drawable_ic_share.xml.flat",
+        "source": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-main-56:\\drawable\\ic_share.xml"
+    },
+    {
+        "merged": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-merged_res-54:\\drawable_ic_nav_search.xml.flat",
+        "source": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-main-56:\\drawable\\ic_nav_search.xml"
+    },
+    {
+        "merged": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-merged_res-54:\\drawable_movie_search.png.flat",
+        "source": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-main-56:\\drawable\\movie_search.png"
+    },
+    {
+        "merged": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-merged_res-54:\\drawable_pixel_google.jpg.flat",
+        "source": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-main-56:\\drawable\\pixel_google.jpg"
+    },
+    {
+        "merged": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-merged_res-54:\\layout_fragment_tv.xml.flat",
+        "source": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-main-56:\\layout\\fragment_tv.xml"
+    },
+    {
+        "merged": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-merged_res-54:\\layout_fragment_movie.xml.flat",
+        "source": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-main-56:\\layout\\fragment_movie.xml"
+    },
+    {
+        "merged": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-merged_res-54:\\layout_activity_details.xml.flat",
+        "source": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-main-56:\\layout\\activity_details.xml"
+    },
+    {
+        "merged": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-merged_res-54:\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-main-56:\\mipmap-xxxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-merged_res-54:\\mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-main-56:\\mipmap-xxxhdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-merged_res-54:\\drawable_ic_favorite_selected.xml.flat",
+        "source": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-main-56:\\drawable\\ic_favorite_selected.xml"
+    },
+    {
+        "merged": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-merged_res-54:\\drawable-v24_drawable.xml.flat",
+        "source": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-main-56:\\drawable-v24\\drawable.xml"
+    },
+    {
+        "merged": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-merged_res-54:\\layout_initial_search_state.xml.flat",
+        "source": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-main-56:\\layout\\initial_search_state.xml"
+    },
+    {
+        "merged": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-merged_res-54:\\layout_view_error.xml.flat",
+        "source": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-main-56:\\layout\\view_error.xml"
+    },
+    {
+        "merged": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-merged_res-54:\\drawable_movie_icon2.png.flat",
+        "source": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-main-56:\\drawable\\movie_icon2.png"
+    },
+    {
+        "merged": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-merged_res-54:\\drawable_ic_broken_image.xml.flat",
+        "source": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-main-56:\\drawable\\ic_broken_image.xml"
+    },
+    {
+        "merged": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-merged_res-54:\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-main-56:\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-merged_res-54:\\mipmap-hdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-main-56:\\mipmap-hdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-merged_res-54:\\menu_bottom_nav_menu.xml.flat",
+        "source": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-main-56:\\menu\\bottom_nav_menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-merged_res-54:\\mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-main-56:\\mipmap-xhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-merged_res-54:\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-main-56:\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-merged_res-54:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-main-56:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-merged_res-54:\\mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-main-56:\\mipmap-hdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-merged_res-54:\\drawable-mdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-pngs-49:\\drawable-mdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-merged_res-54:\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-main-56:\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-merged_res-54:\\menu_detail_menu.xml.flat",
+        "source": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-main-56:\\menu\\detail_menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-merged_res-54:\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-main-56:\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-merged_res-54:\\menu_search_menu.xml.flat",
+        "source": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-main-56:\\menu\\search_menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-merged_res-54:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-main-56:\\xml\\data_extraction_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-merged_res-54:\\drawable-ldpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-pngs-49:\\drawable-ldpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-merged_res-54:\\drawable_ic_refresh.xml.flat",
+        "source": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-main-56:\\drawable\\ic_refresh.xml"
+    },
+    {
+        "merged": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-merged_res-54:\\mipmap-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-main-56:\\mipmap-xxhdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-merged_res-54:\\layout_app_bar_main.xml.flat",
+        "source": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-main-56:\\layout\\app_bar_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-merged_res-54:\\drawable-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-pngs-49:\\drawable-xxxhdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-merged_res-54:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-main-56:\\xml\\backup_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-merged_res-54:\\layout_view_empty_favorite.xml.flat",
+        "source": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-main-56:\\layout\\view_empty_favorite.xml"
+    },
+    {
+        "merged": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-merged_res-54:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-main-56:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-merged_res-54:\\mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-main-56:\\mipmap-xxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-merged_res-54:\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-main-56:\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-merged_res-54:\\drawable_ic_collections_white_18dp.png.flat",
+        "source": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-main-56:\\drawable\\ic_collections_white_18dp.png"
+    },
+    {
+        "merged": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-merged_res-54:\\drawable_ic_error_image.xml.flat",
+        "source": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.app-main-56:\\drawable\\ic_error_image.xml"
+    }
+]

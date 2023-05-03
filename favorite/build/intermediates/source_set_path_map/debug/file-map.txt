@@ -1,0 +1,10 @@
+com.fajar.moviedb.setting.favorite-preference-ktx-1.2.0-0 C:\Users\fajar\.gradle\caches\transforms-3\8e0511ab06d00c2976f2f478682029e1\transformed\preference-ktx-1.2.0\res
+com.fajar.moviedb.setting.favorite-preference-1.2.0-1 C:\Users\fajar\.gradle\caches\transforms-3\9b8056acac252b00368eb43ad82c4c40\transformed\preference-1.2.0\res
+com.fajar.moviedb.setting.favorite-pngs-2 D:\Android\MovieDB2\favorite\build\generated\res\pngs\debug
+com.fajar.moviedb.setting.favorite-resValues-3 D:\Android\MovieDB2\favorite\build\generated\res\resValues\debug
+com.fajar.moviedb.setting.favorite-rs-4 D:\Android\MovieDB2\favorite\build\generated\res\rs\debug
+com.fajar.moviedb.setting.favorite-packageDebugResources-5 D:\Android\MovieDB2\favorite\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.fajar.moviedb.setting.favorite-packageDebugResources-6 D:\Android\MovieDB2\favorite\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.fajar.moviedb.setting.favorite-merged_res-7 D:\Android\MovieDB2\favorite\build\intermediates\merged_res\debug
+com.fajar.moviedb.setting.favorite-debug-8 D:\Android\MovieDB2\favorite\src\debug\res
+com.fajar.moviedb.setting.favorite-main-9 D:\Android\MovieDB2\favorite\src\main\res

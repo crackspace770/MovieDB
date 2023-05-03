@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/MovieDB.iml" filepath="$PROJECT_DIR$/.idea/modules/MovieDB.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/MovieDB.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/MovieDB.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/MovieDB.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/MovieDB.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/MovieDB.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/MovieDB.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/MovieDB.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/MovieDB.app.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/MovieDB.core.iml" filepath="$PROJECT_DIR$/.idea/modules/core/MovieDB.core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/MovieDB.core.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/core/MovieDB.core.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/MovieDB.core.main.iml" filepath="$PROJECT_DIR$/.idea/modules/core/MovieDB.core.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/MovieDB.core.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/core/MovieDB.core.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/setting/MovieDB.favorite.iml" filepath="$PROJECT_DIR$/.idea/modules/setting/MovieDB.favorite.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/favorite/MovieDB.favorite.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/favorite/MovieDB.favorite.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/favorite/MovieDB.favorite.main.iml" filepath="$PROJECT_DIR$/.idea/modules/favorite/MovieDB.favorite.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/favorite/MovieDB.favorite.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/favorite/MovieDB.favorite.unitTest.iml" />
+    </modules>
+  </component>
+</project>

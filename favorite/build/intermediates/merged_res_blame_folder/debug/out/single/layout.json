@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "com.fajar.moviedb.setting.favorite-mergeDebugResources-6:/layout/fragment_movie_favorite.xml",
+        "source": "com.fajar.moviedb.setting.favorite-main-9:/layout/fragment_movie_favorite.xml"
+    },
+    {
+        "merged": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.setting.favorite-mergeDebugResources-6:\\layout\\fragment_movie_favorite.xml",
+        "source": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.setting.favorite-main-9:\\layout\\fragment_movie_favorite.xml"
+    },
+    {
+        "merged": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.setting.favorite-mergeDebugResources-6:\\layout\\fragment_tv_favorite.xml",
+        "source": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.setting.favorite-main-9:\\layout\\fragment_tv_favorite.xml"
+    },
+    {
+        "merged": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.setting.favorite-mergeDebugResources-6:\\layout\\activity_setting.xml",
+        "source": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.setting.favorite-main-9:\\layout\\activity_setting.xml"
+    },
+    {
+        "merged": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.setting.favorite-mergeDebugResources-6:\\layout\\fragment_favorite.xml",
+        "source": "C:\\Users\\fajar\\.gradle\\daemon\\7.5\\com.fajar.moviedb.setting.favorite-main-9:\\layout\\fragment_favorite.xml"
+    }
+]

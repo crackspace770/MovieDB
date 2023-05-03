@@ -1,0 +1,4 @@
+:favorite::debug;Capability: group='MovieDB', name='favorite'
+androidx.annotation:annotation-jvm;Capability: group='androidx.annotation', name='annotation-jvm'
+androidx.preference:preference-ktx;Capability: group='androidx.preference', name='preference-ktx'
+androidx.preference:preference;Capability: group='androidx.preference', name='preference'

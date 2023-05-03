@@ -1,0 +1,11 @@
+R_DEF: Internal format may change without notice
+local
+id rv_movie_favorite
+id rv_tv_favorite
+id tabs
+id view_empty
+id view_empty_favorite
+id view_pager
+layout fragment_favorite
+layout fragment_movie_favorite
+layout fragment_tv_favorite
